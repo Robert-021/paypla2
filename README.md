@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PayPlay
 
 PayPlay es una plataforma moderna diseñada para ofrecer soluciones avanzadas en servicios de gestión y cumplimiento. Este proyecto está construido con un stack tecnológico de vanguardia para garantizar el mejor rendimiento y experiencia de usuario.
@@ -94,3 +95,6 @@ Cuando lanzas este proyecto "a la red" (producción), el proceso es diferente al
 
 Este proyecto es privado. Todos los derechos reservados.
 
+=======
+# paypla2
+>>>>>>> dbc1b98a6b1768f8424c80c3c73eff96dca43ebd
