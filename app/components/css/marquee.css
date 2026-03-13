@@ -1,0 +1,35 @@
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    background-color: #fff;
+}
+
+.marquee-wrapper {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 40s linear infinite;
+    align-items: center;
+}
+
+.marquee-image {
+    width: auto !important;
+    height: 400px !important;
+    object-fit: cover; /* Changed to cover to help bridge gaps if any */
+    padding: 0; /* Removing space between images */
+    margin: 0;
+    flex-shrink: 0;
+    display: block;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause on hover REMOVED as requested */
