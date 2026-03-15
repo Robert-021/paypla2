@@ -1,138 +1,290 @@
+import Image from "next/image";
+
 export default function MDMPage() {
+    const features = [
+        {
+            title: "Bloqueo automático por falta de pago",
+            desc: "Configura fechas límite y el sistema bloqueará el dispositivo automáticamente si el cliente no cumple con sus cuotas.",
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="18" height="11" x="3" y="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+            )
+        },
+        {
+            title: "Detección de cambio de SIM",
+            desc: "El sistema detecta cuando se cambia la tarjeta SIM original y aplica las medidas de seguridad configuradas automáticamente.",
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 10a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7zm6 4h4" /><path d="M10 4a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v4H10V4z" />
+                </svg>
+            )
+        },
+        {
+            title: "Ubicación del dispositivo",
+            desc: "Consulta la ubicación geográfica del equipo directamente desde el panel administrativo en tiempo real.",
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
+                </svg>
+            )
+        },
+        {
+            title: "Panel de control centralizado",
+            desc: "Administra todos los dispositivos desde una sola plataforma fácil de usar, sin importar la cantidad de equipos.",
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="7" height="9" x="3" y="3" rx="1" /><rect width="7" height="5" x="14" y="3" rx="1" /><rect width="7" height="9" x="14" y="12" rx="1" /><rect width="7" height="5" x="3" y="16" rx="1" />
+                </svg>
+            )
+        },
+        {
+            title: "Protección contra desinstalación",
+            desc: "La aplicación solo puede ser desinstalada con autorización del administrador, evitando manipulaciones del sistema.",
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                </svg>
+            )
+        },
+        {
+            title: "Seguro contra formateo",
+            desc: "Si el usuario intenta restablecer el dispositivo, el sistema solicitará el correo del superadministrador para completar el proceso.",
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                </svg>
+            )
+        },
+        {
+            title: "Compatible con Android y Smart TVs",
+            desc: "Gestiona celulares Android y televisores inteligentes desde el mismo sistema centralizado.",
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="14" height="20" x="5" y="2" rx="2" /><path d="M12 18h.01" />
+                </svg>
+            )
+        }
+    ];
+
+    const benefits = [
+        {
+            title: "Protege tus ventas a crédito",
+            desc: "Reduce el riesgo de pérdidas bloqueando dispositivos en caso de incumplimiento.",
+            num: "01"
+        },
+        {
+            title: "Mayor control y seguridad",
+            desc: "Evita manipulaciones del dispositivo y protege la app contra desinstalaciones o formateos no autorizados.",
+            num: "02"
+        },
+        {
+            title: "Disminuye el fraude",
+            desc: "Detecta cambios no autorizados como la sustitución de SIM.",
+            num: "03"
+        },
+        {
+            title: "Recupera tu inversión",
+            desc: "El bloqueo del dispositivo incentiva al cliente a cumplir con sus pagos.",
+            num: "04"
+        },
+        {
+            title: "Escala tu negocio con seguridad",
+            desc: "Vende más dispositivos financiados sin aumentar el riesgo.",
+            num: "05"
+        }
+    ];
+
     return (
-        <div className="min-h-screen">
-            {/* Section 1: Intro - White Background */}
-            <section className="bg-white text-zinc-900 pt-36 pb-12 px-6">
-                <div className="max-w-5xl mx-auto">
-                    <h1 className="text-4xl sm:text-6xl font-black tracking-tighter uppercase italic leading-tight mb-6">
-                        Herramienta de <br />
-                        <span className="text-[rgb(217,61,47)]">Bloqueo de Dispositivos</span>
+        <div className="min-h-screen" style={{ fontFamily: "'Georgia', serif" }}>
+
+            {/* ─── HERO ─── */}
+            <section className="bg-white text-zinc-900 pt-36 pb-16 px-6 relative overflow-hidden">
+                {/* Decorative background shape */}
+                <div className="absolute top-0 right-0 w-1/2 h-full bg-zinc-50 -skew-x-6 origin-top-right pointer-events-none" />
+                <div className="max-w-5xl mx-auto relative z-10">
+                    <div className="inline-block bg-zinc-900 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
+                        Tecnología de Control Remoto
+                    </div>
+                    <h1 className="text-5xl sm:text-7xl font-black tracking-tighter uppercase italic leading-[0.9] mb-8">
+                        Sistema de<br />
+                        Bloqueo<br />
+                        <span className="text-[rgb(217,61,47)]">Inteligente</span>
                     </h1>
-                    <div className="h-1.5 w-24 bg-[rgb(217,61,47)] mb-8 rounded-full"></div>
-                    <p className="text-zinc-600 text-lg sm:text-xl leading-relaxed font-light max-w-4xl">
-                        Nuestra <span className="text-zinc-900 font-bold italic text-xl">Herramienta de Bloqueo</span> permite administrar y proteger dispositivos de forma remota desde una plataforma centralizada. Diseñada para brindar control, seguridad y gestión eficiente durante todo el ciclo de uso del equipo.
+                    <div className="h-1.5 w-20 bg-[rgb(217,61,47)] mb-8 rounded-full" />
+                    <p className="text-zinc-600 text-lg sm:text-xl leading-relaxed font-light max-w-2xl">
+                        Protege los equipos vendidos a crédito y reduce el riesgo de pérdidas por falta de pago. Control total desde una plataforma centralizada para <span className="font-bold text-zinc-900">celulares Android y Smart TVs</span>.
                     </p>
+
+                    {/* ── IMAGE 1 — Hero visual / producto principal ── */}
+                    <div className="mt-12 w-full max-w-lg mx-auto md:mx-0 overflow-hidden rounded-3xl shadow-2xl">
+                        <Image
+                            src="/image/image_logo.png"
+                            alt="Sistema MDM PayPlay"
+                            width={800}
+                            height={500}
+                            className="w-full h-auto object-cover"
+                            priority
+                        />
+                    </div>
                 </div>
             </section>
 
-            {/* Section 2: Security & Lock - Red Background */}
-            <section className="bg-[rgb(217,61,47)] text-white py-14 px-6">
+            {/* ─── INTRO PARAGRAPH ─── */}
+            <section className="bg-zinc-900 text-white py-16 px-6">
                 <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 className="text-3xl sm:text-4xl font-black mb-6 italic uppercase tracking-tighter text-zinc-900">
-                            Bloqueo y Protección
-                        </h2>
-                        <div className="space-y-6 text-white/95 text-lg leading-relaxed">
-                            <p>
-                                El sistema incluye <span className="font-bold underline decoration-zinc-900 underline-offset-4 decoration-2">bloqueo total del dispositivo</span>, bloqueo automático por fecha programada y bloqueo por cambio de SIM.
-                            </p>
-                            <p className="font-light">
-                                Estas herramientas ayudan a prevenir usos no autorizados y permiten mantener un control estricto sobre cada uno de los equipos de su flota.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="p-8 bg-[rgb(31,31,31)]/10 rounded-3xl border border-white/10 backdrop-blur-sm">
-                        <div className="flex items-center gap-4 mb-4">
-                            <div className="w-10 h-10 bg-zinc-900 rounded-lg flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /></svg>
-                            </div>
-                            <span className="text-xl font-bold italic uppercase">Seguridad Activa</span>
-                        </div>
-                        <p className="text-white/80 italic">Prevención inmediata ante manipulaciones o vencimiento de plazos establecidos.</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Section 3: Management - White Background */}
-            <section className="bg-white text-zinc-900 py-14 px-6">
-                <div className="max-w-5xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                        <div className="order-2 md:order-1 bg-zinc-50 p-8 rounded-3xl border border-zinc-100">
-                            <p className="text-zinc-600 text-lg leading-relaxed italic font-light">
-                                "El administrador puede gestionar remotamente los dispositivos y autorizar la desinstalación del MDM una vez finalizado el período de uso o acuerdo establecido."
-                            </p>
-                        </div>
-                        <div className="order-1 md:order-2">
-                            <h2 className="text-3xl sm:text-4xl font-black mb-6 italic uppercase tracking-tighter">
-                                Gestión por <span className="text-[rgb(217,61,47)]">Administrador</span>
-                            </h2>
-                            <p className="text-zinc-600 text-lg leading-relaxed">
-                                Control administrativo total para supervisar el estado de los equipos y ejecutar comandos críticos de forma centralizada sin necesidad de acceso físico al dispositivo.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Section 4: Compatibility - Red Background */}
-            <section className="bg-[rgb(217,61,47)] text-white py-14 px-6 overflow-hidden">
-                <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 className="text-3xl sm:text-5xl font-black italic uppercase tracking-tighter mb-6 text-zinc-900 leading-tight">
-                            Compatibilidad <br /> <span className="text-white">Multi-Plataforma</span>
-                        </h2>
-                        <p className="text-white/90 text-lg max-w-xl font-light leading-relaxed">
-                            Nuestra tecnología es compatible con <span className="font-bold underline decoration-zinc-900 decoration-2 underline-offset-4">smartphones y Smart TV</span>, permitiendo aplicar políticas de control en distintos tipos de dispositivos desde una sola plataforma.
+                        <p className="text-lg sm:text-xl leading-relaxed text-white/80 font-light">
+                            A través de una plataforma de administración centralizada, puedes{" "}
+                            <span className="text-[rgb(217,61,47)] font-bold">controlar, monitorear y bloquear</span>{" "}
+                            dispositivos de forma remota, asegurando que cada venta financiada esté respaldada.
+                        </p>
+                        <p className="mt-6 text-lg leading-relaxed text-white/80 font-light">
+                            La solución está diseñada para <span className="text-white font-semibold">celulares Android y Smart TVs</span>, brindando a tu negocio seguridad, control y protección en cada dispositivo.
                         </p>
                     </div>
-                    <div className="flex justify-center lg:justify-end gap-4 sm:gap-12 items-center">
-                        <img src="/image/LockCell.png" alt="Smartphone Compatibility" className="w-36 sm:w-44 h-auto drop-shadow-2xl transition hover:scale-105 duration-500" />
-                        <img src="/image/TVLock.png" alt="Smart TV Compatibility" className="w-52 sm:w-60 h-auto drop-shadow-2xl transition hover:scale-105 duration-500" />
-                    </div>
-                </div>
-            </section>
-
-            {/* Section 5: Functions Grid - White Background */}
-            <section className="bg-white text-zinc-900 py-20 px-6">
-                <div className="max-w-5xl mx-auto">
-                    <h2 className="text-3xl sm:text-5xl font-black mb-12 italic uppercase tracking-tighter text-center">
-                        Funciones <span className="text-[rgb(217,61,47)] font-black">Principales</span>
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {[
-                            {
-                                title: "Bloqueo Total",
-                                icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
-                            },
-                            {
-                                title: "Bloqueo por Fecha",
-                                icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
-                            },
-                            {
-                                title: "Bloqueo por SIM",
-                                icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7zm6 4h4" /><path d="M10 4a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v4H10V4z" /></svg>
-                            },
-                            {
-                                title: "Gestión Remota",
-                                icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 7h-9" /><path d="M14 17H5" /><circle cx="17" cy="17" r="3" /><circle cx="7" cy="7" r="3" /></svg>
-                            },
-                            {
-                                title: "Desinstalación Autorizada",
-                                icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18" /><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" /><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" /></svg>
-                            },
-                            {
-                                title: "Celulares y Smart TV",
-                                icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" /><path d="M2 12h3" /><path d="M19 12h3" /></svg>
-                            }
-                        ].map((item, idx) => (
-                            <div key={idx} className="flex items-center gap-6 p-6 bg-zinc-50 border border-zinc-100 rounded-2xl hover:border-[rgb(217,61,47)] transition-all duration-300 group">
-                                <div className="text-[rgb(217,61,47)] transition-transform group-hover:scale-110">
-                                    {item.icon}
-                                </div>
-                                <h3 className="text-sm font-black italic uppercase text-zinc-900 leading-tight">{item.title}</h3>
+                    <div className="flex flex-col gap-4">
+                        {["Tiendas de tecnología", "Distribuidores", "Empresas de venta a crédito"].map((item, i) => (
+                            <div key={i} className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl px-6 py-4 hover:border-[rgb(217,61,47)] transition-all duration-300">
+                                <div className="w-2 h-2 rounded-full bg-[rgb(217,61,47)] shrink-0" />
+                                <span className="text-white/90 font-light text-lg">{item}</span>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Section 6: Simple Outro - Red Background */}
-            <section className="bg-[rgb(217,61,47)] text-white py-12 px-6 text-center">
-                <div className="max-w-4xl mx-auto flex flex-col items-center gap-6">
-                    <p className="text-xl sm:text-2xl font-black italic uppercase tracking-tight leading-tight italic">
-                        Controle, asegure y optimice su gestión móvil.
+            {/* ─── FEATURES ─── */}
+            <section className="bg-white text-zinc-900 py-20 px-6">
+                <div className="max-w-5xl mx-auto">
+                    <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-14">
+                        <h2 className="text-4xl sm:text-5xl font-black italic uppercase tracking-tighter leading-tight">
+                            Funciones<br /><span className="text-[rgb(217,61,47)]">Principales</span>
+                        </h2>
+                        <p className="text-zinc-500 font-light max-w-xs text-right hidden sm:block">
+                            Todo lo que necesitas para proteger tu flota de dispositivos financiados.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        {features.map((f, i) => (
+                            <div
+                                key={i}
+                                className="group flex gap-5 p-6 rounded-2xl bg-zinc-50 border border-zinc-100 hover:border-[rgb(217,61,47)] hover:bg-white transition-all duration-300 hover:shadow-lg hover:shadow-red-50"
+                            >
+                                <div className="shrink-0 w-12 h-12 rounded-xl bg-[rgb(217,61,47)]/10 text-[rgb(217,61,47)] flex items-center justify-center group-hover:bg-[rgb(217,61,47)] group-hover:text-white transition-all duration-300">
+                                    {f.icon}
+                                </div>
+                                <div>
+                                    <h3 className="text-sm font-black italic uppercase tracking-tight text-zinc-900 mb-1">{f.title}</h3>
+                                    <p className="text-zinc-500 text-sm leading-relaxed font-light">{f.desc}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ─── COMPATIBILITY ─── */}
+            <section className="bg-[rgb(217,61,47)] text-white py-20 px-6 overflow-hidden relative">
+                <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+                    backgroundImage: "repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%)",
+                    backgroundSize: "20px 20px"
+                }} />
+                <div className="max-w-5xl mx-auto relative z-10">
+                    <h2 className="text-4xl sm:text-6xl font-black italic uppercase tracking-tighter text-zinc-900 mb-4">
+                        Compatibilidad
+                    </h2>
+                    <h3 className="text-3xl sm:text-5xl font-black italic uppercase tracking-tighter text-white mb-12">
+                        Multi-Plataforma
+                    </h3>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        {/* Android card */}
+                        <div className="bg-zinc-900/20 border border-white/20 rounded-3xl p-8 backdrop-blur-sm">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-12 h-12 bg-zinc-900 rounded-xl flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" /><path d="M12 18h.01" /></svg>
+                                </div>
+                                <span className="text-xl font-black italic uppercase">Celulares Android</span>
+                            </div>
+                            {/* ── IMAGE 3 — Imagen de celular con sistema de bloqueo ── */}
+                            <div className="flex flex-col items-center justify-center py-6 mb-4">
+                                <Image
+                                    src="/image/LockCell.png"
+                                    alt="Android Device Lock"
+                                    width={200}
+                                    height={400}
+                                    className="w-auto h-96 object-contain drop-shadow-2xl"
+                                />
+                            </div>
+                            <p className="text-white/80 font-light text-sm">Control total sobre smartphones Android financiados.</p>
+                        </div>
+
+                        {/* Smart TV card */}
+                        <div className="bg-zinc-900/20 border border-white/20 rounded-3xl p-8 backdrop-blur-sm">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-12 h-12 bg-zinc-900 rounded-xl flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="15" x="2" y="3" rx="2" /><polyline points="8 21 12 17 16 21" /></svg>
+                                </div>
+                                <span className="text-xl font-black italic uppercase">Smart TVs</span>
+                            </div>
+                            {/* ── IMAGE 4 — Imagen de Smart TV con sistema de bloqueo ── */}
+                            <div className="flex flex-col items-center justify-center py-6 mb-4">
+                                <Image
+                                    src="/image/TVLock.png"
+                                    alt="Smart TV Lock"
+                                    width={600}
+                                    height={400}
+                                    className="w-auto h-128 object-contain drop-shadow-2xl"
+                                />
+                            </div>
+                            <p className="text-white/80 font-light text-sm">El mismo sistema de protección para televisores inteligentes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ─── BENEFITS ─── */}
+            <section className="bg-zinc-900 text-white py-20 px-6">
+                <div className="max-w-5xl mx-auto">
+                    <h2 className="text-4xl sm:text-5xl font-black italic uppercase tracking-tighter mb-14 text-center">
+                        Beneficios para <span className="text-[rgb(217,61,47)]">tu negocio</span>
+                    </h2>
+
+                    <div className="flex flex-col gap-4">
+                        {benefits.map((b, i) => (
+                            <div
+                                key={i}
+                                className="group flex items-center gap-8 p-6 rounded-2xl border border-white/10 hover:border-[rgb(217,61,47)] bg-white/5 hover:bg-white/10 transition-all duration-300"
+                            >
+                                <span className="text-4xl font-black italic text-white/10 group-hover:text-[rgb(217,61,47)] transition-colors duration-300 shrink-0 w-14 text-right">
+                                    {b.num}
+                                </span>
+                                <div className="h-8 w-px bg-white/10 group-hover:bg-[rgb(217,61,47)] transition-colors duration-300 shrink-0" />
+                                <div>
+                                    <h3 className="font-black italic uppercase tracking-tight text-white text-base mb-1">{b.title}</h3>
+                                    <p className="text-white/50 text-sm font-light leading-relaxed">{b.desc}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ─── CTA CLOSING ─── */}
+            <section className="bg-[rgb(217,61,47)] py-20 px-6 text-center relative overflow-hidden">
+                <div className="absolute -left-16 -top-16 w-64 h-64 rounded-full bg-zinc-900/10 pointer-events-none" />
+                <div className="absolute -right-16 -bottom-16 w-96 h-96 rounded-full bg-zinc-900/10 pointer-events-none" />
+                <div className="max-w-3xl mx-auto relative z-10">
+                    <h2 className="text-4xl sm:text-6xl font-black italic uppercase tracking-tighter text-zinc-900 leading-tight mb-6">
+                        Más control,<br />más seguridad,<br />
+                        <span className="text-white">más ventas.</span>
+                    </h2>
+                    <div className="h-1.5 w-20 bg-zinc-900 rounded-full mx-auto mb-8" />
+                    <p className="text-white/90 text-lg sm:text-xl font-light max-w-xl mx-auto leading-relaxed">
+                        Nuestro sistema te permite vender tecnología a crédito mientras proteges tu inversión.
                     </p>
-                    <div className="h-1 w-16 bg-zinc-900 rounded-full"></div>
                 </div>
             </section>
         </div>
