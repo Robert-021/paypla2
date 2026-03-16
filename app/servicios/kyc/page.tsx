@@ -1,3 +1,5 @@
+import { ScrollReveal } from "../../components/ScrollReveal";
+
 export default function KYCPage() {
     const steps = [
         {
@@ -82,7 +84,7 @@ export default function KYCPage() {
     ];
 
     return (
-        <div className="min-h-screen" style={{ fontFamily: "'Georgia', serif" }}>
+        <div className="min-h-screen">
 
             {/* ─── HERO ─── */}
             <section className="bg-zinc-900 text-white pt-36 pb-20 px-6 relative overflow-hidden">
@@ -97,28 +99,32 @@ export default function KYCPage() {
 
                 <div className="max-w-5xl mx-auto relative z-10">
                     <div className="flex flex-col md:flex-row md:items-end gap-12">
-                        <div className="flex-1">
-                            <span className="inline-block border border-[rgb(217,61,47)] text-[rgb(217,61,47)] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
-                                Know Your Customer
-                            </span>
-                            <h1 className="text-5xl sm:text-7xl font-black tracking-tighter uppercase italic leading-[0.88] mb-8">
-                                Conoce a<br />tu cliente.<br />
-                                <span className="text-[rgb(217,61,47)]">Protege tu</span><br />
-                                <span className="text-[rgb(217,61,47)]">negocio.</span>
-                            </h1>
-                            <p className="text-white/70 text-lg font-light leading-relaxed max-w-lg">
-                                Verifica la identidad de tus clientes de forma{" "}
-                                <span className="text-white font-semibold">100% digital</span>, rápida y segura, cumpliendo con los estándares del sector financiero.
-                            </p>
-                        </div>
+                        <ScrollReveal direction="right" className="flex-1">
+                            <div>
+                                <span className="inline-block border border-[rgb(217,61,47)] text-[rgb(217,61,47)] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
+                                    Know Your Customer
+                                </span>
+                                <h1 className="text-5xl sm:text-7xl font-black tracking-tighter uppercase leading-[0.88] mb-8">
+                                    Conoce a<br />tu cliente.<br />
+                                    <span className="text-[rgb(217,61,47)]">Protege tu</span><br />
+                                    <span className="text-[rgb(217,61,47)]">negocio.</span>
+                                </h1>
+                                <p className="text-white/70 text-lg font-light leading-relaxed max-w-lg">
+                                    Verifica la identidad de tus clientes de forma{" "}
+                                    <span className="text-white font-semibold">100% digital</span>, rápida y segura, cumpliendo con los estándares del sector financiero.
+                                </p>
+                            </div>
+                        </ScrollReveal>
 
                         {/* ── IMAGE PLACEHOLDER 1 — Ícono/ilustración de identidad digital ── */}
-                        <div className="w-full md:w-72 shrink-0 border-2 border-dashed border-white/20 rounded-3xl flex flex-col items-center justify-center py-16 bg-white/5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgb(217,61,47)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-3 opacity-60">
-                                <rect width="18" height="18" x="3" y="3" rx="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                            </svg>
-                            <p className="text-white/30 text-xs font-bold uppercase tracking-widest text-center px-4">Imagen: verificación de identidad o documento</p>
-                        </div>
+                        <ScrollReveal direction="left" className="w-full md:w-72 shrink-0">
+                            <div className="w-full border-2 border-dashed border-white/20 rounded-3xl flex flex-col items-center justify-center py-16 bg-white/5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgb(217,61,47)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-3 opacity-60">
+                                    <rect width="18" height="18" x="3" y="3" rx="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                                </svg>
+                                <p className="text-white/30 text-xs font-bold uppercase tracking-widest text-center px-4">Imagen: verificación de identidad o documento</p>
+                            </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
@@ -126,28 +132,32 @@ export default function KYCPage() {
             {/* ─── WHAT IS KYC ─── */}
             <section className="bg-white text-zinc-900 py-20 px-6">
                 <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
-                    <div>
-                        <h2 className="text-4xl sm:text-5xl font-black italic uppercase tracking-tighter leading-tight mb-6">
-                            ¿Qué es el <span className="text-[rgb(217,61,47)]">KYC</span>?
-                        </h2>
-                        <div className="h-1.5 w-16 bg-[rgb(217,61,47)] mb-8 rounded-full" />
-                        <p className="text-zinc-600 text-lg leading-relaxed font-light mb-6">
-                            El KYC es el proceso que permite{" "}
-                            <span className="font-bold text-zinc-900">verificar la identidad de tus clientes</span>{" "}
-                            antes de iniciar una relación comercial o aprobar un crédito.
-                        </p>
-                        <p className="text-zinc-600 text-lg leading-relaxed font-light">
-                            Su objetivo es garantizar que las personas son quienes dicen ser, reduciendo riesgos de fraude, suplantación de identidad y actividades ilegales.
-                        </p>
-                    </div>
+                    <ScrollReveal direction="right">
+                        <div>
+                            <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-tight mb-6">
+                                ¿Qué es el <span className="text-[rgb(217,61,47)]">KYC</span>?
+                            </h2>
+                            <div className="h-1.5 w-16 bg-[rgb(217,61,47)] mb-8 rounded-full" />
+                            <p className="text-zinc-600 text-lg leading-relaxed font-light mb-6">
+                                El KYC es el proceso que permite{" "}
+                                <span className="font-bold text-zinc-900">verificar la identidad de tus clientes</span>{" "}
+                                antes de iniciar una relación comercial o aprobar un crédito.
+                            </p>
+                            <p className="text-zinc-600 text-lg leading-relaxed font-light">
+                                Su objetivo es garantizar que las personas son quienes dicen ser, reduciendo riesgos de fraude, suplantación de identidad y actividades ilegales.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
                     {/* ── IMAGE PLACEHOLDER 2 — Proceso de escaneo / selfie con documento ── */}
-                    <div className="border-2 border-dashed border-zinc-200 rounded-3xl flex flex-col items-center justify-center py-20 bg-zinc-50">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgb(217,61,47)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-3 opacity-50">
-                            <rect width="18" height="18" x="3" y="3" rx="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                        </svg>
-                        <p className="text-zinc-400 text-sm font-bold uppercase tracking-widest text-center px-6">Imagen: persona escaneando documento o selfie de validación</p>
-                    </div>
+                    <ScrollReveal direction="left">
+                        <div className="border-2 border-dashed border-zinc-200 rounded-3xl flex flex-col items-center justify-center py-20 bg-zinc-50">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgb(217,61,47)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-3 opacity-50">
+                                <rect width="18" height="18" x="3" y="3" rx="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                            </svg>
+                            <p className="text-zinc-400 text-sm font-bold uppercase tracking-widest text-center px-6">Imagen: persona escaneando documento o selfie de validación</p>
+                        </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
@@ -160,64 +170,74 @@ export default function KYCPage() {
                     }}
                 />
                 <div className="max-w-5xl mx-auto relative z-10">
-                    <div className="mb-14">
-                        <h2 className="text-4xl sm:text-5xl font-black italic uppercase tracking-tighter text-zinc-900 leading-tight">
-                            ¿Cómo <span className="text-white">funciona?</span>
-                        </h2>
-                        <p className="text-white/80 font-light mt-4 max-w-xl">
-                            Todo el proceso se realiza en minutos, de forma automatizada, sin presencia física ni papeleo.
-                        </p>
-                    </div>
+                    <ScrollReveal>
+                        <div className="mb-14">
+                            <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter text-zinc-900 leading-tight">
+                                ¿Cómo <span className="text-white">funciona?</span>
+                            </h2>
+                            <p className="text-white/80 font-light mt-4 max-w-xl">
+                                Todo el proceso se realiza en minutos, de forma automatizada, sin presencia física ni papeleo.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         {steps.map((s, i) => (
-                            <div key={i} className="group bg-zinc-900/20 border border-white/20 rounded-2xl p-6 hover:bg-zinc-900/30 hover:border-white/40 transition-all duration-300 backdrop-blur-sm">
-                                <div className="flex items-start gap-5">
-                                    <span className="text-4xl font-black italic text-white/20 group-hover:text-white/40 transition-colors shrink-0">
-                                        {s.num}
-                                    </span>
-                                    <div>
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <div className="w-9 h-9 rounded-lg bg-zinc-900 text-white flex items-center justify-center shrink-0">
-                                                {s.icon}
+                            <ScrollReveal key={i} delay={i * 0.1} className="h-full">
+                                <div className="group bg-zinc-900/20 border border-white/20 rounded-2xl p-6 hover:bg-zinc-900/30 hover:border-white/40 transition-all duration-300 backdrop-blur-sm h-full">
+                                    <div className="flex items-start gap-5">
+                                        <span className="text-4xl font-black text-white/20 group-hover:text-white/40 transition-colors shrink-0">
+                                            {s.num}
+                                        </span>
+                                        <div>
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <div className="w-9 h-9 rounded-lg bg-zinc-900 text-white flex items-center justify-center shrink-0">
+                                                    {s.icon}
+                                                </div>
+                                                <h3 className="font-black uppercase tracking-tight text-sm">{s.title}</h3>
                                             </div>
-                                            <h3 className="font-black italic uppercase tracking-tight text-sm">{s.title}</h3>
+                                            <p className="text-white/70 text-sm font-light leading-relaxed">{s.desc}</p>
                                         </div>
-                                        <p className="text-white/70 text-sm font-light leading-relaxed">{s.desc}</p>
                                     </div>
                                 </div>
-                            </div>
+                            </ScrollReveal>
                         ))}
                     </div>
 
                     {/* ── IMAGE PLACEHOLDER 3 — Flujo del proceso KYC / app móvil ── */}
-                    <div className="mt-10 border-2 border-dashed border-white/25 rounded-3xl flex flex-col items-center justify-center py-14">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-3 opacity-30">
-                            <rect width="18" height="18" x="3" y="3" rx="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                        </svg>
-                        <p className="text-white/30 text-sm font-bold uppercase tracking-widest text-center px-6">Imagen: flujo del proceso en app móvil o pantalla de validación</p>
-                    </div>
+                    <ScrollReveal>
+                        <div className="mt-10 border-2 border-dashed border-white/25 rounded-3xl flex flex-col items-center justify-center py-14">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-3 opacity-30">
+                                <rect width="18" height="18" x="3" y="3" rx="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                            </svg>
+                            <p className="text-white/30 text-sm font-bold uppercase tracking-widest text-center px-6">Imagen: flujo del proceso en app móvil o pantalla de validación</p>
+                        </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
             {/* ─── BENEFITS ─── */}
             <section className="bg-white text-zinc-900 py-20 px-6">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="text-4xl sm:text-5xl font-black italic uppercase tracking-tighter mb-14">
-                        Beneficios para <span className="text-[rgb(217,61,47)]">tu empresa</span>
-                    </h2>
+                    <ScrollReveal>
+                        <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter mb-14">
+                            Beneficios para <span className="text-[rgb(217,61,47)]">tu empresa</span>
+                        </h2>
+                    </ScrollReveal>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {benefits.map((b, i) => (
-                            <div key={i} className="group flex gap-5 p-7 rounded-2xl bg-zinc-50 border border-zinc-100 hover:border-[rgb(217,61,47)] hover:bg-white hover:shadow-lg hover:shadow-red-50 transition-all duration-300">
-                                <div className="shrink-0 w-12 h-12 rounded-xl bg-[rgb(217,61,47)]/10 text-[rgb(217,61,47)] flex items-center justify-center group-hover:bg-[rgb(217,61,47)] group-hover:text-white transition-all duration-300">
-                                    {b.icon}
+                            <ScrollReveal key={i} delay={i * 0.1} className="h-full">
+                                <div className="group flex gap-5 p-7 rounded-2xl bg-zinc-50 border border-zinc-100 hover:border-[rgb(217,61,47)] hover:bg-white hover:shadow-lg hover:shadow-red-50 transition-all duration-300 h-full">
+                                    <div className="shrink-0 w-12 h-12 rounded-xl bg-[rgb(217,61,47)]/10 text-[rgb(217,61,47)] flex items-center justify-center group-hover:bg-[rgb(217,61,47)] group-hover:text-white transition-all duration-300">
+                                        {b.icon}
+                                    </div>
+                                    <div>
+                                        <h3 className="font-black uppercase tracking-tight text-zinc-900 text-sm mb-2">{b.title}</h3>
+                                        <p className="text-zinc-500 text-sm font-light leading-relaxed">{b.desc}</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 className="font-black italic uppercase tracking-tight text-zinc-900 text-sm mb-2">{b.title}</h3>
-                                    <p className="text-zinc-500 text-sm font-light leading-relaxed">{b.desc}</p>
-                                </div>
-                            </div>
+                            </ScrollReveal>
                         ))}
                     </div>
                 </div>
@@ -225,45 +245,49 @@ export default function KYCPage() {
 
             {/* ─── TRUST BLOCK ─── */}
             <section className="bg-zinc-900 text-white py-20 px-6">
-                <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+                <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center overflow-hidden">
                     {/* ── IMAGE PLACEHOLDER 4 — Ícono de seguridad / escudo digital / verificado ── */}
-                    <div className="border-2 border-dashed border-white/15 rounded-3xl flex flex-col items-center justify-center py-20 bg-white/5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgb(217,61,47)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-3 opacity-50">
-                            <rect width="18" height="18" x="3" y="3" rx="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                        </svg>
-                        <p className="text-white/25 text-sm font-bold uppercase tracking-widest text-center px-6">Imagen: escudo de seguridad, checkmark o identidad verificada</p>
-                    </div>
-
-                    <div>
-                        <span className="inline-block border border-white/20 text-white/50 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-                            Tecnología KYC Digital
-                        </span>
-                        <h2 className="text-4xl sm:text-5xl font-black italic uppercase tracking-tighter leading-tight mb-6">
-                            Identifica clientes<br /><span className="text-[rgb(217,61,47)]">con confianza</span>
-                        </h2>
-                        <p className="text-white/70 text-lg font-light leading-relaxed mb-8">
-                            Con nuestra tecnología de KYC digital, puedes validar la identidad de tus clientes, reducir fraudes y otorgar crédito con mayor seguridad, mientras haces crecer tu negocio de forma confiable.
-                        </p>
-
-                        {/* Checklist */}
-                        <div className="flex flex-col gap-3">
-                            {[
-                                "Verificación de documentos de identidad",
-                                "Validación de datos personales",
-                                "Análisis antifraude automatizado",
-                                "Procesos de identificación digital seguros",
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-center gap-4">
-                                    <div className="w-6 h-6 rounded-full bg-[rgb(217,61,47)] flex items-center justify-center shrink-0">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
-                                            <polyline points="20 6 9 17 4 12" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-white/80 text-sm font-light">{item}</span>
-                                </div>
-                            ))}
+                    <ScrollReveal direction="right">
+                        <div className="border-2 border-dashed border-white/15 rounded-3xl flex flex-col items-center justify-center py-20 bg-white/5 w-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgb(217,61,47)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-3 opacity-50">
+                                <rect width="18" height="18" x="3" y="3" rx="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                            </svg>
+                            <p className="text-white/25 text-sm font-bold uppercase tracking-widest text-center px-6">Imagen: escudo de seguridad, checkmark o identidad verificada</p>
                         </div>
-                    </div>
+                    </ScrollReveal>
+
+                    <ScrollReveal direction="left">
+                        <div>
+                            <span className="inline-block border border-white/20 text-white/50 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+                                Tecnología KYC Digital
+                            </span>
+                            <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-tight mb-6">
+                                Identifica clientes<br /><span className="text-[rgb(217,61,47)]">con confianza</span>
+                            </h2>
+                            <p className="text-white/70 text-lg font-light leading-relaxed mb-8">
+                                Con nuestra tecnología de KYC digital, puedes validar la identidad de tus clientes, reducir fraudes y otorgar crédito con mayor seguridad, mientras haces crecer tu negocio de forma confiable.
+                            </p>
+
+                            {/* Checklist */}
+                            <div className="flex flex-col gap-3">
+                                {[
+                                    "Verificación de documentos de identidad",
+                                    "Validación de datos personales",
+                                    "Análisis antifraude automatizado",
+                                    "Procesos de identificación digital seguros",
+                                ].map((item, i) => (
+                                    <div key={i} className="flex items-center gap-4">
+                                        <div className="w-6 h-6 rounded-full bg-[rgb(217,61,47)] flex items-center justify-center shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                                                <polyline points="20 6 9 17 4 12" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-white/80 text-sm font-light">{item}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
@@ -272,14 +296,16 @@ export default function KYCPage() {
                 <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-zinc-900/10 pointer-events-none" />
                 <div className="absolute -right-10 -top-10 w-60 h-60 rounded-full bg-zinc-900/10 pointer-events-none" />
                 <div className="max-w-3xl mx-auto relative z-10">
-                    <h2 className="text-4xl sm:text-6xl font-black italic uppercase tracking-tighter text-zinc-900 leading-tight mb-6">
-                        Valida con confianza.<br />
-                        <span className="text-white">Crece con seguridad.</span>
-                    </h2>
-                    <div className="h-1.5 w-20 bg-zinc-900 rounded-full mx-auto mb-8" />
-                    <p className="text-white/90 text-lg sm:text-xl font-light max-w-xl mx-auto leading-relaxed">
-                        KYC digital, rápido y 100% automatizado para que tu negocio avance sin riesgos.
-                    </p>
+                    <ScrollReveal>
+                        <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-zinc-900 leading-tight mb-6">
+                            Valida con confianza.<br />
+                            <span className="text-white">Crece con seguridad.</span>
+                        </h2>
+                        <div className="h-1.5 w-20 bg-zinc-900 rounded-full mx-auto mb-8" />
+                        <p className="text-white/90 text-lg sm:text-xl font-light max-w-xl mx-auto leading-relaxed">
+                            KYC digital, rápido y 100% automatizado para que tu negocio avance sin riesgos.
+                        </p>
+                    </ScrollReveal>
                 </div>
             </section>
 

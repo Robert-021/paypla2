@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ScrollReveal } from "../../components/ScrollReveal";
 
 export default function MDMPage() {
     const features = [
@@ -96,59 +97,67 @@ export default function MDMPage() {
     ];
 
     return (
-        <div className="min-h-screen" style={{ fontFamily: "'Georgia', serif" }}>
+        <div className="min-h-screen">
 
             {/* ─── HERO ─── */}
             <section className="bg-white text-zinc-900 pt-36 pb-16 px-6 relative overflow-hidden">
                 {/* Decorative background shape */}
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-zinc-50 -skew-x-6 origin-top-right pointer-events-none" />
                 <div className="max-w-5xl mx-auto relative z-10">
-                    <div className="inline-block bg-zinc-900 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
-                        Tecnología de Control Remoto
-                    </div>
-                    <h1 className="text-5xl sm:text-7xl font-black tracking-tighter uppercase italic leading-[0.9] mb-8">
-                        Sistema de<br />
-                        Bloqueo<br />
-                        <span className="text-[rgb(217,61,47)]">Inteligente</span>
-                    </h1>
-                    <div className="h-1.5 w-20 bg-[rgb(217,61,47)] mb-8 rounded-full" />
-                    <p className="text-zinc-600 text-lg sm:text-xl leading-relaxed font-light max-w-2xl">
-                        Protege los equipos vendidos a crédito y reduce el riesgo de pérdidas por falta de pago. Control total desde una plataforma centralizada para <span className="font-bold text-zinc-900">celulares Android y Smart TVs</span>.
-                    </p>
+                    <ScrollReveal>
+                        <div className="inline-block bg-zinc-900 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
+                            Tecnología de Control Remoto
+                        </div>
+                        <h1 className="text-5xl sm:text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-8">
+                            Sistema de<br />
+                            Bloqueo<br />
+                            <span className="text-[rgb(217,61,47)]">Inteligente</span>
+                        </h1>
+                        <div className="h-1.5 w-20 bg-[rgb(217,61,47)] mb-8 rounded-full" />
+                        <p className="text-zinc-600 text-lg sm:text-xl leading-relaxed font-light max-w-2xl">
+                            Protege los equipos vendidos a crédito y reduce el riesgo de pérdidas por falta de pago. Control total desde una plataforma centralizada para <span className="font-bold text-zinc-900">celulares Android y Smart TVs</span>.
+                        </p>
+                    </ScrollReveal>
 
                     {/* ── IMAGE 1 — Hero visual / producto principal ── */}
-                    <div className="mt-12 w-full max-w-lg mx-auto md:mx-0 overflow-hidden rounded-3xl shadow-2xl">
-                        <Image
-                            src="/image/image_logo.png"
-                            alt="Sistema MDM PayPlay"
-                            width={800}
-                            height={500}
-                            className="w-full h-auto object-cover"
-                            priority
-                        />
-                    </div>
+                    <ScrollReveal delay={0.2}>
+                        <div className="mt-12 w-full max-w-lg mx-auto md:mx-0 overflow-hidden rounded-3xl shadow-2xl">
+                            <Image
+                                src="/image/image_logo.png"
+                                alt="Sistema MDM PayPlay"
+                                width={800}
+                                height={500}
+                                className="w-full h-auto object-cover"
+                                priority
+                            />
+                        </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
             {/* ─── INTRO PARAGRAPH ─── */}
             <section className="bg-zinc-900 text-white py-16 px-6">
                 <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <p className="text-lg sm:text-xl leading-relaxed text-white/80 font-light">
-                            A través de una plataforma de administración centralizada, puedes{" "}
-                            <span className="text-[rgb(217,61,47)] font-bold">controlar, monitorear y bloquear</span>{" "}
-                            dispositivos de forma remota, asegurando que cada venta financiada esté respaldada.
-                        </p>
-                        <p className="mt-6 text-lg leading-relaxed text-white/80 font-light">
-                            La solución está diseñada para <span className="text-white font-semibold">celulares Android y Smart TVs</span>, brindando a tu negocio seguridad, control y protección en cada dispositivo.
-                        </p>
-                    </div>
+                    <ScrollReveal direction="right">
+                        <div>
+                            <p className="text-lg sm:text-xl leading-relaxed text-white/80 font-light">
+                                A través de una plataforma de administración centralizada, puedes{" "}
+                                <span className="text-[rgb(217,61,47)] font-bold">controlar, monitorear y bloquear</span>{" "}
+                                dispositivos de forma remota, asegurando que cada venta financiada esté respaldada.
+                            </p>
+                            <p className="mt-6 text-lg leading-relaxed text-white/80 font-light">
+                                La solución está diseñada para <span className="text-white font-semibold">celulares Android y Smart TVs</span>, brindando a tu negocio seguridad, control y protección en cada dispositivo.
+                            </p>
+                        </div>
+                    </ScrollReveal>
                     <div className="flex flex-col gap-4">
                         {["Tiendas de tecnología", "Distribuidores", "Empresas de venta a crédito"].map((item, i) => (
-                            <div key={i} className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl px-6 py-4 hover:border-[rgb(217,61,47)] transition-all duration-300">
-                                <div className="w-2 h-2 rounded-full bg-[rgb(217,61,47)] shrink-0" />
-                                <span className="text-white/90 font-light text-lg">{item}</span>
-                            </div>
+                            <ScrollReveal key={i} delay={i * 0.1} direction="left">
+                                <div className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl px-6 py-4 hover:border-[rgb(217,61,47)] transition-all duration-300 w-full">
+                                    <div className="w-2 h-2 rounded-full bg-[rgb(217,61,47)] shrink-0" />
+                                    <span className="text-white/90 font-light text-lg">{item}</span>
+                                </div>
+                            </ScrollReveal>
                         ))}
                     </div>
                 </div>
@@ -157,29 +166,32 @@ export default function MDMPage() {
             {/* ─── FEATURES ─── */}
             <section className="bg-white text-zinc-900 py-20 px-6">
                 <div className="max-w-5xl mx-auto">
-                    <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-14">
-                        <h2 className="text-4xl sm:text-5xl font-black italic uppercase tracking-tighter leading-tight">
-                            Funciones<br /><span className="text-[rgb(217,61,47)]">Principales</span>
-                        </h2>
-                        <p className="text-zinc-500 font-light max-w-xs text-right hidden sm:block">
-                            Todo lo que necesitas para proteger tu flota de dispositivos financiados.
-                        </p>
-                    </div>
+                    <ScrollReveal>
+                        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-14">
+                            <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-tight">
+                                Funciones<br /><span className="text-[rgb(217,61,47)]">Principales</span>
+                            </h2>
+                            <p className="text-zinc-500 font-light max-w-xs text-right hidden sm:block">
+                                Todo lo que necesitas para proteger tu flota de dispositivos financiados.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                         {features.map((f, i) => (
-                            <div
-                                key={i}
-                                className="group flex gap-5 p-6 rounded-2xl bg-zinc-50 border border-zinc-100 hover:border-[rgb(217,61,47)] hover:bg-white transition-all duration-300 hover:shadow-lg hover:shadow-red-50"
-                            >
-                                <div className="shrink-0 w-12 h-12 rounded-xl bg-[rgb(217,61,47)]/10 text-[rgb(217,61,47)] flex items-center justify-center group-hover:bg-[rgb(217,61,47)] group-hover:text-white transition-all duration-300">
-                                    {f.icon}
+                            <ScrollReveal key={i} delay={i * 0.05} className="h-full">
+                                <div
+                                    className="group flex gap-5 p-6 rounded-2xl bg-zinc-50 border border-zinc-100 hover:border-[rgb(217,61,47)] hover:bg-white transition-all duration-300 hover:shadow-lg hover:shadow-red-50 h-full"
+                                >
+                                    <div className="shrink-0 w-12 h-12 rounded-xl bg-[rgb(217,61,47)]/10 text-[rgb(217,61,47)] flex items-center justify-center group-hover:bg-[rgb(217,61,47)] group-hover:text-white transition-all duration-300">
+                                        {f.icon}
+                                    </div>
+                                    <div>
+                                        <h3 className="text-sm font-black uppercase tracking-tight text-zinc-900 mb-1">{f.title}</h3>
+                                        <p className="text-zinc-500 text-sm leading-relaxed font-light">{f.desc}</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 className="text-sm font-black italic uppercase tracking-tight text-zinc-900 mb-1">{f.title}</h3>
-                                    <p className="text-zinc-500 text-sm leading-relaxed font-light">{f.desc}</p>
-                                </div>
-                            </div>
+                            </ScrollReveal>
                         ))}
                     </div>
                 </div>
@@ -192,55 +204,61 @@ export default function MDMPage() {
                     backgroundSize: "20px 20px"
                 }} />
                 <div className="max-w-5xl mx-auto relative z-10">
-                    <h2 className="text-4xl sm:text-6xl font-black italic uppercase tracking-tighter text-zinc-900 mb-4">
-                        Compatibilidad
-                    </h2>
-                    <h3 className="text-3xl sm:text-5xl font-black italic uppercase tracking-tighter text-white mb-12">
-                        Multi-Plataforma
-                    </h3>
+                    <ScrollReveal>
+                        <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-zinc-900 mb-4">
+                            Compatibilidad
+                        </h2>
+                        <h3 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter text-white mb-12">
+                            Multi-Plataforma
+                        </h3>
+                    </ScrollReveal>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {/* Android card */}
-                        <div className="bg-zinc-900/20 border border-white/20 rounded-3xl p-8 backdrop-blur-sm">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="w-12 h-12 bg-zinc-900 rounded-xl flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" /><path d="M12 18h.01" /></svg>
+                        <ScrollReveal direction="right" className="h-full">
+                            <div className="bg-zinc-900/20 border border-white/20 rounded-3xl p-8 backdrop-blur-sm h-full w-full">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-12 h-12 bg-zinc-900 rounded-xl flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" /><path d="M12 18h.01" /></svg>
+                                    </div>
+                                    <span className="text-xl font-black uppercase">Celulares Android</span>
                                 </div>
-                                <span className="text-xl font-black italic uppercase">Celulares Android</span>
+                                {/* ── IMAGE 3 — Imagen de celular con sistema de bloqueo ── */}
+                                <div className="flex flex-col items-center justify-center py-6 mb-4">
+                                    <Image
+                                        src="/image/LockCell.png"
+                                        alt="Android Device Lock"
+                                        width={200}
+                                        height={400}
+                                        className="w-auto h-96 object-contain drop-shadow-2xl"
+                                    />
+                                </div>
+                                <p className="text-white/80 font-light text-sm">Control total sobre smartphones Android financiados.</p>
                             </div>
-                            {/* ── IMAGE 3 — Imagen de celular con sistema de bloqueo ── */}
-                            <div className="flex flex-col items-center justify-center py-6 mb-4">
-                                <Image
-                                    src="/image/LockCell.png"
-                                    alt="Android Device Lock"
-                                    width={200}
-                                    height={400}
-                                    className="w-auto h-96 object-contain drop-shadow-2xl"
-                                />
-                            </div>
-                            <p className="text-white/80 font-light text-sm">Control total sobre smartphones Android financiados.</p>
-                        </div>
+                        </ScrollReveal>
 
                         {/* Smart TV card */}
-                        <div className="bg-zinc-900/20 border border-white/20 rounded-3xl p-8 backdrop-blur-sm">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="w-12 h-12 bg-zinc-900 rounded-xl flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="15" x="2" y="3" rx="2" /><polyline points="8 21 12 17 16 21" /></svg>
+                        <ScrollReveal direction="left" className="h-full">
+                            <div className="bg-zinc-900/20 border border-white/20 rounded-3xl p-8 backdrop-blur-sm h-full w-full">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-12 h-12 bg-zinc-900 rounded-xl flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="15" x="2" y="3" rx="2" /><polyline points="8 21 12 17 16 21" /></svg>
+                                    </div>
+                                    <span className="text-xl font-black uppercase">Smart TVs</span>
                                 </div>
-                                <span className="text-xl font-black italic uppercase">Smart TVs</span>
+                                {/* ── IMAGE 4 — Imagen de Smart TV con sistema de bloqueo ── */}
+                                <div className="flex flex-col items-center justify-center py-6 mb-4">
+                                    <Image
+                                        src="/image/TVLock.png"
+                                        alt="Smart TV Lock"
+                                        width={600}
+                                        height={400}
+                                        className="w-auto h-128 object-contain drop-shadow-2xl"
+                                    />
+                                </div>
+                                <p className="text-white/80 font-light text-sm">El mismo sistema de protección para televisores inteligentes.</p>
                             </div>
-                            {/* ── IMAGE 4 — Imagen de Smart TV con sistema de bloqueo ── */}
-                            <div className="flex flex-col items-center justify-center py-6 mb-4">
-                                <Image
-                                    src="/image/TVLock.png"
-                                    alt="Smart TV Lock"
-                                    width={600}
-                                    height={400}
-                                    className="w-auto h-128 object-contain drop-shadow-2xl"
-                                />
-                            </div>
-                            <p className="text-white/80 font-light text-sm">El mismo sistema de protección para televisores inteligentes.</p>
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
@@ -248,25 +266,28 @@ export default function MDMPage() {
             {/* ─── BENEFITS ─── */}
             <section className="bg-zinc-900 text-white py-20 px-6">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="text-4xl sm:text-5xl font-black italic uppercase tracking-tighter mb-14 text-center">
-                        Beneficios para <span className="text-[rgb(217,61,47)]">tu negocio</span>
-                    </h2>
+                    <ScrollReveal>
+                        <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter mb-14 text-center">
+                            Beneficios para <span className="text-[rgb(217,61,47)]">tu negocio</span>
+                        </h2>
+                    </ScrollReveal>
 
                     <div className="flex flex-col gap-4">
                         {benefits.map((b, i) => (
-                            <div
-                                key={i}
-                                className="group flex items-center gap-8 p-6 rounded-2xl border border-white/10 hover:border-[rgb(217,61,47)] bg-white/5 hover:bg-white/10 transition-all duration-300"
-                            >
-                                <span className="text-4xl font-black italic text-white/10 group-hover:text-[rgb(217,61,47)] transition-colors duration-300 shrink-0 w-14 text-right">
-                                    {b.num}
-                                </span>
-                                <div className="h-8 w-px bg-white/10 group-hover:bg-[rgb(217,61,47)] transition-colors duration-300 shrink-0" />
-                                <div>
-                                    <h3 className="font-black italic uppercase tracking-tight text-white text-base mb-1">{b.title}</h3>
-                                    <p className="text-white/50 text-sm font-light leading-relaxed">{b.desc}</p>
+                            <ScrollReveal key={i} delay={i * 0.1}>
+                                <div
+                                    className="group flex items-center gap-8 p-6 rounded-2xl border border-white/10 hover:border-[rgb(217,61,47)] bg-white/5 hover:bg-white/10 transition-all duration-300 w-full"
+                                >
+                                    <span className="text-4xl font-black text-white/10 group-hover:text-[rgb(217,61,47)] transition-colors duration-300 shrink-0 w-14 text-right">
+                                        {b.num}
+                                    </span>
+                                    <div className="h-8 w-px bg-white/10 group-hover:bg-[rgb(217,61,47)] transition-colors duration-300 shrink-0" />
+                                    <div>
+                                        <h3 className="font-black uppercase tracking-tight text-white text-base mb-1">{b.title}</h3>
+                                        <p className="text-white/50 text-sm font-light leading-relaxed">{b.desc}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </ScrollReveal>
                         ))}
                     </div>
                 </div>
@@ -277,14 +298,16 @@ export default function MDMPage() {
                 <div className="absolute -left-16 -top-16 w-64 h-64 rounded-full bg-zinc-900/10 pointer-events-none" />
                 <div className="absolute -right-16 -bottom-16 w-96 h-96 rounded-full bg-zinc-900/10 pointer-events-none" />
                 <div className="max-w-3xl mx-auto relative z-10">
-                    <h2 className="text-4xl sm:text-6xl font-black italic uppercase tracking-tighter text-zinc-900 leading-tight mb-6">
-                        Más control,<br />más seguridad,<br />
-                        <span className="text-white">más ventas.</span>
-                    </h2>
-                    <div className="h-1.5 w-20 bg-zinc-900 rounded-full mx-auto mb-8" />
-                    <p className="text-white/90 text-lg sm:text-xl font-light max-w-xl mx-auto leading-relaxed">
-                        Nuestro sistema te permite vender tecnología a crédito mientras proteges tu inversión.
-                    </p>
+                    <ScrollReveal>
+                        <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-zinc-900 leading-tight mb-6">
+                            Más control,<br />más seguridad,<br />
+                            <span className="text-white">más ventas.</span>
+                        </h2>
+                        <div className="h-1.5 w-20 bg-zinc-900 rounded-full mx-auto mb-8" />
+                        <p className="text-white/90 text-lg sm:text-xl font-light max-w-xl mx-auto leading-relaxed">
+                            Nuestro sistema te permite vender tecnología a crédito mientras proteges tu inversión.
+                        </p>
+                    </ScrollReveal>
                 </div>
             </section>
         </div>
