@@ -42,14 +42,15 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"
-                } bg-black/95 backdrop-blur-xl border-b border-white/5 py-3 shadow-2xl`}
+            className={`fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-[1000] transition-all duration-500 ease-in-out ${
+                isVisible ? "translate-y-0 opacity-100" : "-translate-y-24 opacity-0"
+            } w-[92%] sm:w-[95%] max-w-7xl bg-[rgb(2,4,6)]/95 backdrop-blur-md border border-white/10 py-2.5 sm:py-3 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.5)]`}
         >
-            <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div className="max-w-7xl mx-auto px-5 sm:px-8 flex justify-between items-center">
 
                 {/* Logo */}
-                <Link href="/" className="logo flex items-center gap-3 group">
-                    <div className="relative w-10 h-10 transition-transform duration-300 group-hover:scale-110">
+                <Link href="/" className="logo flex items-center gap-2 sm:gap-3 group">
+                    <div className="relative w-8 h-8 sm:w-10 sm:h-10 transition-transform duration-300 group-hover:scale-110">
                         <Image
                             src="/image/PayPlay.png"
                             alt="PAY&PLAY Logo"
@@ -58,7 +59,7 @@ export default function Navbar() {
                             priority
                         />
                     </div>
-                    <span className="text-2xl font-black tracking-tighter text-white transition-colors duration-300 group-hover:text-zinc-300">
+                    <span className="text-xl sm:text-2xl font-black tracking-tighter text-white transition-colors duration-300 group-hover:text-zinc-300">
                         P<span className="text-[rgb(217,61,47)]">A</span>Y&PL<span className="text-[rgb(217,61,47)]">A</span>Y
                     </span>
                 </Link>
@@ -94,37 +95,46 @@ export default function Navbar() {
 
                 {/* Mobile Toggle */}
                 <div
-                    className="md:hidden flex flex-col gap-1.5 cursor-pointer z-[1100]"
+                    className="md:hidden flex flex-col gap-1.5 cursor-pointer z-[1100] p-1"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
-                    <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
-                    <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""}`} />
-                    <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+                    <div className={`w-5 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+                    <div className={`w-5 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""}`} />
+                    <div className={`w-5 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
                 </div>
             </div>
 
             {/* Mobile Menu */}
-            <div className={`fixed inset-0 bg-black z-[1050] flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
+            <div className={`fixed inset-0 h-[100dvh] bg-[rgb(2,4,6)] backdrop-blur-2xl z-[1050] flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${
+                isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
                 }`}>
-                <div className="flex flex-col gap-8 text-center">
-                    {navLinks.map((link) => (
+                {/* Decorative background elements */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[rgb(217,61,47)]/15 blur-[120px] -z-10 rounded-full" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 blur-[120px] -z-10 rounded-full" />
+
+                <div className="w-full flex flex-col items-center justify-center gap-6 py-10 overflow-y-auto max-h-full">
+                    {navLinks.map((link, idx) => (
                         <Link
                             key={link.href}
                             href={link.href}
-                            className={`text-3xl font-black uppercase tracking-tighter transition-all ${pathname === link.href ? "text-[rgb(217,61,47)] scale-110" : "text-white hover:text-[rgb(217,61,47)]"
+                            className={`text-2xl sm:text-3xl font-black uppercase tracking-tight transition-all duration-300 ${
+                                pathname === link.href ? "text-[rgb(217,61,47)] scale-110" : "text-white hover:text-[rgb(217,61,47)]"
                                 }`}
+                            style={{ transitionDelay: `${idx * 75}ms` }}
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {link.name}
                         </Link>
                     ))}
-                    <a
-                        href="https://wa.me/593959728822"
-                        target="_blank"
-                        className="bg-[rgb(217,61,47)] text-white px-10 py-4 rounded-full font-bold text-xl mt-4"
-                    >
-                        WhatsApp
-                    </a>
+                    <div className="mt-6">
+                        <a
+                            href="https://wa.me/593959728822"
+                            target="_blank"
+                            className="inline-block bg-[rgb(217,61,47)] text-white px-8 py-3.5 rounded-full font-bold text-lg shadow-xl shadow-red-900/40 active:scale-95 transition-transform"
+                        >
+                            WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
 

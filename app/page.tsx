@@ -128,20 +128,18 @@ export default function Home() {
         </main>
 
         {/* ─── VALUE PROPOSITION STRIP ─── */}
-        <section className="py-14 bg-[rgb(217,61,47)] relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10 pointer-events-none"
-            style={{
-              backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
-              backgroundSize: "28px 28px"
-            }}
-          />
+        <section className="py-16 sm:py-24 bg-[rgb(217,61,47)] relative overflow-hidden">
+          {/* Subtle background glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-32 bg-white/10 blur-[100px] pointer-events-none" />
+
           <div className="max-w-5xl mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-6">
               {pillars.map((p, i) => (
-                <div key={i} className="bg-[rgb(217,61,47)] px-6 py-8 flex flex-col items-center text-center">
+                <div key={i} className="flex flex-col items-center text-center">
                   <ScrollReveal delay={i * 0.1}>
-                    <span className="text-4xl sm:text-5xl font-black text-zinc-900 mb-1">{p.val}</span>
-                    <span className="text-white/80 text-xs font-light uppercase tracking-widest">{p.label}</span>
+                    <span className="text-5xl sm:text-6xl font-black text-white mb-2 drop-shadow-sm block">{p.val}</span>
+                    <span className="text-zinc-900 font-extrabold text-xs uppercase tracking-[0.2em]">{p.label}</span>
+                    <div className="h-1 w-8 bg-zinc-900/20 mx-auto mt-4 rounded-full" />
                   </ScrollReveal>
                 </div>
               ))}
@@ -256,7 +254,7 @@ export default function Home() {
                 <div className="relative flex justify-center">
                   <div className="relative w-full max-w-xs aspect-square">
                     <Image
-                      src="/image/PayPlaysito.png"
+                      src="/image/PayPlayMascota.png"
                       alt="PAY&PLAY"
                       fill
                       className="object-contain drop-shadow-2xl transition duration-500"

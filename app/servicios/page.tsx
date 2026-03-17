@@ -102,21 +102,21 @@ export default function ServiciosPage() {
                                 <span className="inline-block border border-[rgb(217,61,47)] text-[rgb(217,61,47)] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
                                     Suite completa de soluciones
                                 </span>
-                                <h1 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.88] text-white mb-6">
+                                <h1 className="text-4xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.88] text-white mb-6">
                                     Nuestros<br />
                                     <span className="text-[rgb(217,61,47)]">Servicios</span>
                                 </h1>
                                 <div className="h-1.5 w-20 bg-[rgb(217,61,47)] mb-8 rounded-full" />
-                                <p className="text-zinc-400 text-lg font-light leading-relaxed max-w-lg">
+                                <p className="text-zinc-400 text-base sm:text-lg font-light leading-relaxed max-w-lg">
                                     Desde la validación de identidad hasta la gestión de ventas a cuotas y el bloqueo de dispositivos, Pay&Play integra todo lo que necesitas para{" "}
                                     <span className="text-white font-semibold">vender con seguridad y crecer sin riesgos</span>.
                                 </p>
                             </div>
 
                             {/* Service tag pills */}
-                            <div className="flex flex-wrap gap-3 md:justify-end">
+                            <div className="flex flex-wrap gap-2 md:justify-end mt-4 md:mt-0">
                                 {services.map((s, i) => (
-                                    <span key={i} className="flex items-center gap-2 border border-white/10 bg-white/5 text-zinc-300 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full">
+                                    <span key={i} className="flex items-center gap-2 border border-white/10 bg-white/5 text-zinc-300 text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1.5 sm:px-4 sm:py-2 rounded-full">
                                         <span className="w-1.5 h-1.5 rounded-full bg-[rgb(217,61,47)]" />
                                         {s.tag}
                                     </span>
@@ -139,22 +139,31 @@ export default function ServiciosPage() {
                             {services.map((service, idx) => (
                                 <div key={service.id} className={`box box-${idx + 1}`}>
                                     <div className="bg-overlay"></div>
-                                    <div className="details">
-                                        <span className="inline-block border border-white/40 text-white/80 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
-                                            {service.tag}
-                                        </span>
-                                        <h2>{service.title}</h2>
-                                        <p>{service.description}</p>
-                                        <div className="flex flex-wrap gap-2 mt-3 mb-4">
+                                    <div className="details relative">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <span className="w-8 h-[1px] bg-[rgb(217,61,47)]" />
+                                            <span className="text-white/40 text-xs font-bold uppercase tracking-[0.2em]">
+                                                {/* Puedes cambiar el tamaño de la etiqueta 'MDM', 'RIESGO', etc. arriba: text-xs, text-sm, etc. */}
+                                                {service.tag}
+                                            </span>
+                                        </div>
+                                        <h2 className="tracking-tight">{service.title}</h2>
+                                        <p className="font-light">{service.description}</p>
+                                        <div className="flex flex-wrap gap-2 mt-2 mb-8">
                                             {service.features.map((f, fi) => (
-                                                <span key={fi} className="flex items-center gap-1.5 bg-white/10 border border-white/20 text-white/80 text-xs px-3 py-1 rounded-full">
+                                                <span key={fi} className="flex items-center gap-2 bg-white/5 border border-white/10 text-white/70 text-xs font-medium px-4 py-2 rounded-full transition-colors hover:border-white/20 hover:text-white/90">
+                                                    {/* Controlas el tamaño de los features arriba con 'text-xs' o 'text-sm' */}
                                                     <span className="w-1 h-1 rounded-full bg-[rgb(217,61,47)] shrink-0" />
                                                     {f}
                                                 </span>
                                             ))}
                                         </div>
                                         <Link href={service.href}>
-                                            <button>{service.btnText}</button>
+                                            <button className="group flex items-center gap-3">
+                                                {/* El tamaño del texto de este botón se controla en el archivo slider.css (.details button) */}
+                                                {service.btnText}
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1"><path d="m9 18 6-6-6-6" /></svg>
+                                            </button>
                                         </Link>
                                     </div>
                                     <div className="illustration">
@@ -189,8 +198,11 @@ export default function ServiciosPage() {
             </div>
 
             {/* ─── STATS STRIP ─── */}
-            <section className="py-16 px-6 bg-[rgb(217,61,47)]">
-                <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-px bg-white/20 rounded-2xl overflow-hidden">
+            <section className="py-12 sm:py-20 px-6 bg-[rgb(217,61,47)] overflow-hidden relative">
+                {/* Subtle background glow */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-32 bg-white/10 blur-[100px] pointer-events-none" />
+                
+                <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-6 relative z-10">
                     {[
                         { val: "4", label: "Soluciones integradas" },
                         { val: "100%", label: "Procesos digitales" },
@@ -199,11 +211,12 @@ export default function ServiciosPage() {
                         <ScrollReveal
                             key={i}
                             delay={i * 0.1}
-                            className={`${i === 2 ? "col-span-2 sm:col-span-1" : ""} h-full`}
+                            className="h-full"
                         >
-                            <div className="bg-[rgb(217,61,47)] px-6 py-8 flex flex-col items-center text-center w-full h-full">
-                                <span className="text-5xl font-black text-zinc-900 mb-1">{s.val}</span>
-                                <span className="text-white/80 text-xs font-light uppercase tracking-widest">{s.label}</span>
+                            <div className="flex flex-col items-center text-center w-full h-full">
+                                <span className="text-5xl sm:text-6xl font-black text-white mb-2 drop-shadow-sm">{s.val}</span>
+                                <span className="text-zinc-900 font-extrabold text-xs uppercase tracking-[0.2em]">{s.label}</span>
+                                <div className="h-1 w-8 bg-zinc-900/20 mt-4 rounded-full" />
                             </div>
                         </ScrollReveal>
                     ))}
@@ -217,7 +230,7 @@ export default function ServiciosPage() {
                         <span className="inline-block bg-zinc-900 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
                             ¿Listo para empezar?
                         </span>
-                        <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter text-zinc-900 leading-tight mb-6">
+                        <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter text-zinc-900 leading-tight mb-6">
                             Evoluciona tu negocio<br />
                             <span className="text-[rgb(217,61,47)]">hoy mismo</span>
                         </h2>

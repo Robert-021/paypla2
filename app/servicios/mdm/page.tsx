@@ -216,50 +216,52 @@ export default function MDMPage() {
                         </h3>
                     </ScrollReveal>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
                         {/* Android card */}
                         <ScrollReveal direction="right" className="h-full">
-                            <div className="bg-zinc-900/20 border border-white/20 rounded-3xl p-8 backdrop-blur-sm h-full w-full">
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-12 h-12 bg-zinc-900 rounded-xl flex items-center justify-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" /><path d="M12 18h.01" /></svg>
+                            <div className="bg-zinc-900/20 border border-white/10 rounded-[2.5rem] p-10 backdrop-blur-md h-full w-full flex flex-col items-center text-center group hover:bg-zinc-900/30 transition-colors duration-500">
+                                <div className="flex flex-col items-center gap-4 mb-10 w-full">
+                                    <div className="w-14 h-14 bg-zinc-900 rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" /><path d="M12 18h.01" /></svg>
                                     </div>
-                                    <span className="text-xl font-black uppercase">Celulares Android</span>
+                                    <span className="text-2xl font-black uppercase tracking-tight">Celulares Android</span>
                                 </div>
                                 {/* ── IMAGE 3 — Imagen de celular con sistema de bloqueo ── */}
-                                <div className="flex flex-col items-center justify-center py-6 mb-4">
-                                    <Image
-                                        src="/image/LockCell.png"
-                                        alt="Android Device Lock"
-                                        width={200}
-                                        height={400}
-                                        className="w-auto h-96 object-contain drop-shadow-2xl"
-                                    />
+                                <div className="flex-1 flex items-center justify-center w-full mb-10">
+                                    <div className="relative w-full h-80 transition-transform duration-500 group-hover:scale-105">
+                                        <Image
+                                            src="/image/LockCell.png"
+                                            alt="Android Device Lock"
+                                            fill
+                                            className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                                        />
+                                    </div>
                                 </div>
-                                <p className="text-white/80 font-light text-sm">Control total sobre smartphones Android financiados.</p>
+                                <p className="text-white/60 font-light text-sm max-w-[200px] leading-relaxed">Control total sobre smartphones Android financiados.</p>
                             </div>
                         </ScrollReveal>
 
                         {/* Smart TV card */}
                         <ScrollReveal direction="left" className="h-full">
-                            <div className="bg-zinc-900/20 border border-white/20 rounded-3xl p-8 backdrop-blur-sm h-full w-full">
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-12 h-12 bg-zinc-900 rounded-xl flex items-center justify-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="15" x="2" y="3" rx="2" /><polyline points="8 21 12 17 16 21" /></svg>
+                            <div className="bg-zinc-900/20 border border-white/10 rounded-[2.5rem] p-10 backdrop-blur-md h-full w-full flex flex-col items-center text-center group hover:bg-zinc-900/30 transition-colors duration-500">
+                                <div className="flex flex-col items-center gap-4 mb-10 w-full">
+                                    <div className="w-14 h-14 bg-zinc-900 rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="15" x="2" y="3" rx="2" /><polyline points="8 21 12 17 16 21" /></svg>
                                     </div>
-                                    <span className="text-xl font-black uppercase">Smart TVs</span>
+                                    <span className="text-2xl font-black uppercase tracking-tight">Smart TVs</span>
                                 </div>
                                 {/* ── IMAGE 4 — Imagen de Smart TV con sistema de bloqueo ── */}
-                                <div className="flex flex-col items-center justify-center py-6 mb-4">
-                                    <Image
-                                        src="/image/TVLock.png"
-                                        alt="Smart TV Lock"
-                                        width={600}
-                                        height={400}
-                                        className="w-auto h-128 object-contain drop-shadow-2xl"
-                                    />
+                                <div className="flex-1 flex items-center justify-center w-full mb-10">
+                                    <div className="relative w-full h-80 transition-transform duration-500 group-hover:scale-105">
+                                        <Image
+                                            src="/image/TVLock.png"
+                                            alt="Smart TV Lock"
+                                            fill
+                                            className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                                        />
+                                    </div>
                                 </div>
-                                <p className="text-white/80 font-light text-sm">El mismo sistema de protección para televisores inteligentes.</p>
+                                <p className="text-white/60 font-light text-sm max-w-[200px] leading-relaxed">El mismo sistema de protección para televisores inteligentes.</p>
                             </div>
                         </ScrollReveal>
                     </div>
