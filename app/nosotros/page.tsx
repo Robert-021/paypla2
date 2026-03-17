@@ -90,7 +90,7 @@ export default function NosotrosPage() {
                             <div className="relative flex justify-center">
                                 <div className="relative w-full max-w-sm aspect-square">
                                     <Image
-                                        src="/image/PayPlaysito.png"
+                                        src="/image/PayPlayMascota.png"
                                         alt="PAY&PLAY"
                                         fill
                                         className="object-contain drop-shadow-2xl transition duration-500"

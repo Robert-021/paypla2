@@ -63,6 +63,16 @@ export default function PlataformasPage() {
                 <div className="absolute top-0 right-0 w-2/5 h-full bg-zinc-50 -skew-x-6 origin-top-right pointer-events-none" />
                 <div className="absolute left-0 top-0 w-1.5 h-full bg-[rgb(217,61,47)]" />
 
+                {/* Background Image with controlled opacity - Placed after accents to stay on top of them */}
+                <div
+                    className="absolute inset-0 z-0 pointer-events-none opacity-[0.3]"
+                    style={{
+                        backgroundImage: 'url("/image/PlataformaCredito.jpg")',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center 35%',
+                    }}
+                />
+
                 <div className="max-w-5xl mx-auto relative z-10 pl-6">
                     <ScrollReveal>
                         <span className="inline-block bg-zinc-900 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
@@ -102,7 +112,7 @@ export default function PlataformasPage() {
                     <ScrollReveal direction="left">
                         <div className="bg-white/5 border border-white/10 rounded-3xl p-10 flex items-center justify-center hover:border-[rgb(217,61,47)] transition-colors duration-500 w-full">
                             <img
-                                src="/image/LucasCredito.png"
+                                src="/image/CreditoAnalisis.png"
                                 alt="Plataforma de Ventas a Cuotas"
                                 className="w-full h-auto drop-shadow-2xl"
                             />
@@ -149,7 +159,7 @@ export default function PlataformasPage() {
                         </div>
                     </div>
 
-                    {/* ── IMAGE PLACEHOLDER — Dashboard / panel de créditos ── */}
+                    {/* ── IMAGE PLACEHOLDER — Dashboard / panel de créditos ──
                     <ScrollReveal>
                         <div className="mt-14 border-2 border-dashed border-white/25 rounded-3xl flex flex-col items-center justify-center py-16">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-3 opacity-30">
@@ -157,7 +167,7 @@ export default function PlataformasPage() {
                             </svg>
                             <p className="text-white/30 text-sm font-bold uppercase tracking-widest text-center px-6">Imagen: captura del panel de ventas a cuotas o dashboard de cartera</p>
                         </div>
-                    </ScrollReveal>
+                    </ScrollReveal> */}
                 </div>
             </section>
 

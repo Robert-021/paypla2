@@ -70,6 +70,16 @@ export default function RiesgoPage() {
                 {/* Red vertical stripe */}
                 <div className="absolute left-0 top-0 w-1.5 h-full bg-[rgb(217,61,47)]" />
 
+                {/* Background Image with controlled opacity - Placed after accents to stay on top of them */}
+                <div
+                    className="absolute inset-0 z-0 pointer-events-none opacity-[0.3]"
+                    style={{
+                        backgroundImage: 'url("/image/Finanzas.jpg")',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center 35%', /* Controlas la posición vertical aquí (pistas: top, center, bottom o %) */
+                    }}
+                />
+
                 <div className="max-w-5xl mx-auto relative z-10 pl-6">
                     <ScrollReveal>
                         <span className="inline-block bg-[rgb(217,61,47)] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
@@ -82,7 +92,7 @@ export default function RiesgoPage() {
                         </h1>
                         <div className="h-1.5 w-20 bg-zinc-900 mb-8 rounded-full" />
                         <p className="text-zinc-600 text-lg sm:text-xl leading-relaxed font-light max-w-2xl">
-                             <span className="font-bold text-zinc-900">capacidad real de pagar a cuotas</span>, ayudando a tomar decisiones seguras antes de otorgar financiamiento.
+                            <span className="font-bold text-zinc-900">capacidad real de pagar a cuotas</span>, ayudando a tomar decisiones seguras antes de otorgar financiamiento.
                         </p>
                     </ScrollReveal>
                 </div>
