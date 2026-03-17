@@ -11,9 +11,9 @@ const services = [
         id: 1,
         title: "Bloqueo de Dispositivos",
         tag: "MDM",
-        description: "Protege los equipos vendidos a crédito con bloqueo remoto y control total de tu flota desde una sola plataforma centralizada.",
+        description: "Protege los equipos vendidos a cuotas con bloqueo remoto y control total de tu flota desde una sola plataforma centralizada.",
         features: ["Bloqueo automático por falta de pago", "Detección de cambio de SIM", "Seguro contra formateo", "Compatible con Android y Smart TVs"],
-        image: "/image/Lucas.png",
+        image: "/image/LockMDM.png",
         btnText: "Más Información",
         href: "/servicios/mdm"
     },
@@ -21,9 +21,9 @@ const services = [
         id: 2,
         title: "Indicadores de Riesgo",
         tag: "RIESGO",
-        description: "Analiza el perfil financiero de cada cliente antes de otorgar crédito y toma decisiones basadas en datos reales.",
+        description: "Analiza el perfil financiero de cada cliente antes de otorgar el pago a cuotas y toma decisiones basadas en datos reales.",
         features: ["Historial y capacidad de pago", "Nivel de endeudamiento", "Comportamiento financiero", "Alertas de riesgo y fraude"],
-        image: "/image/LucasRiesgos.png",
+        image: "/image/IndicadorRiesgo.png",
         btnText: "Más Información",
         href: "/servicios/riesgo"
     },
@@ -33,17 +33,17 @@ const services = [
         tag: "KYC",
         description: "Verifica la identidad de tus clientes de forma 100% digital en minutos, con análisis antifraude automatizado.",
         features: ["Verificación de documentos", "Validación de datos personales", "Análisis antifraude", "Onboarding 100% digital"],
-        image: "/image/LucasKYC.png",
+        image: "/image/KYCRender.png",
         btnText: "Más Información",
         href: "/servicios/kyc"
     },
     {
         id: 4,
-        title: "Plataforma de Créditos",
-        tag: "CRÉDITOS",
-        description: "Convierte tu negocio en una financiera. Gestiona todo el ciclo del crédito desde la aprobación hasta la cobranza automatizada.",
-        features: ["Aprobación en minutos", "Reglas de crédito personalizadas", "Cobranza automatizada", "Control total de cartera"],
-        image: "/image/LucasCredito.png",
+        title: "Plataforma de Ventas a Cuotas",
+        tag: "A CUOTAS",
+        description: "Convierte tu negocio en una financiera. Gestiona todo el ciclo de venta a cuotas desde la aprobación hasta la cobranza automatizada.",
+        features: ["Aprobación en minutos", "Reglas de pago a cuotas personalizadas", "Cobranza automatizada", "Control total de cartera"],
+        image: "/image/PlatafprmaCredito.png",
         btnText: "Más Información",
         href: "/servicios/plataformas"
     }
@@ -108,7 +108,7 @@ export default function ServiciosPage() {
                                 </h1>
                                 <div className="h-1.5 w-20 bg-[rgb(217,61,47)] mb-8 rounded-full" />
                                 <p className="text-zinc-400 text-lg font-light leading-relaxed max-w-lg">
-                                    Desde la validación de identidad hasta la gestión de crédito y el bloqueo de dispositivos, Pay&Play integra todo lo que necesitas para{" "}
+                                    Desde la validación de identidad hasta la gestión de ventas a cuotas y el bloqueo de dispositivos, Pay&Play integra todo lo que necesitas para{" "}
                                     <span className="text-white font-semibold">vender con seguridad y crecer sin riesgos</span>.
                                 </p>
                             </div>
@@ -196,8 +196,8 @@ export default function ServiciosPage() {
                         { val: "100%", label: "Procesos digitales" },
                         { val: "360°", label: "Control de tu cartera" }
                     ].map((s, i) => (
-                        <ScrollReveal 
-                            key={i} 
+                        <ScrollReveal
+                            key={i}
                             delay={i * 0.1}
                             className={`${i === 2 ? "col-span-2 sm:col-span-1" : ""} h-full`}
                         >

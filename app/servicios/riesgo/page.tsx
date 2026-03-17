@@ -5,7 +5,7 @@ export default function RiesgoPage() {
         {
             num: "01",
             title: "Historial Crediticio",
-            desc: "Revisamos el comportamiento de pago del cliente para identificar si ha cumplido correctamente con créditos anteriores.",
+            desc: "Revisamos el comportamiento de pago del cliente para identificar si ha cumplido correctamente con pagos a cuotas anteriores.",
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><polyline points="10 9 9 9 8 9" />
@@ -55,7 +55,7 @@ export default function RiesgoPage() {
     ];
 
     const outcomes = [
-        { label: "Aprueba créditos", sub: "a clientes con alta probabilidad de pago" },
+        { label: "Ventas a cuotas", sub: "a clientes con alta probabilidad de pago" },
         { label: "Evita perfiles", sub: "que puedan afectar tu cartera" },
         { label: "Genera perfiles", sub: "de riesgo claros y confiables" },
     ];
@@ -73,7 +73,7 @@ export default function RiesgoPage() {
                 <div className="max-w-5xl mx-auto relative z-10 pl-6">
                     <ScrollReveal>
                         <span className="inline-block bg-[rgb(217,61,47)] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
-                            Análisis inteligente de crédito
+                            Análisis inteligente de ventas a cuotas
                         </span>
                         <h1 className="text-5xl sm:text-7xl font-black tracking-tighter uppercase leading-[0.88] mb-8">
                             Indicadores<br />
@@ -82,8 +82,7 @@ export default function RiesgoPage() {
                         </h1>
                         <div className="h-1.5 w-20 bg-zinc-900 mb-8 rounded-full" />
                         <p className="text-zinc-600 text-lg sm:text-xl leading-relaxed font-light max-w-2xl">
-                            Nuestra plataforma utiliza indicadores clave para analizar si un cliente tiene la{" "}
-                            <span className="font-bold text-zinc-900">capacidad real de pagar un crédito</span>, ayudando a tomar decisiones seguras antes de otorgar financiamiento.
+                             <span className="font-bold text-zinc-900">capacidad real de pagar a cuotas</span>, ayudando a tomar decisiones seguras antes de otorgar financiamiento.
                         </p>
                     </ScrollReveal>
                 </div>
@@ -169,13 +168,13 @@ export default function RiesgoPage() {
                             <div>
                                 <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter text-zinc-900 leading-tight mb-6">
                                     Decisiones de<br />
-                                    <span className="text-white">crédito más seguras</span>
+                                    <span className="text-white">ventas a cuotas más seguras</span>
                                 </h2>
                                 <p className="text-white/90 text-lg font-light leading-relaxed">
                                     Con estos indicadores, nuestra tecnología genera{" "}
                                     <span className="font-bold underline decoration-zinc-900 decoration-2 underline-offset-4">
                                         perfiles de riesgo claros y confiables
-                                    </span>, permitiendo aprobar créditos a clientes con mayor probabilidad de pago y evitar aquellos que puedan afectar tu cartera.
+                                    </span>, permitiendo aprobar ventas a cuotas a clientes con mayor probabilidad de pago y evitar aquellos que puedan afectar tu cartera.
                                 </p>
                             </div>
                         </ScrollReveal>
@@ -213,7 +212,7 @@ export default function RiesgoPage() {
                                 Tu cartera,<br /><span className="text-[rgb(217,61,47)]">protegida</span>
                             </h2>
                             <p className="text-white/70 text-lg font-light leading-relaxed">
-                                A través de tecnología y análisis de datos, ayudamos a las empresas a tomar decisiones seguras antes de otorgar financiamiento, construyendo una cartera de crédito más saludable y rentable.
+                                A través de tecnología y análisis de datos, ayudamos a las empresas a tomar decisiones seguras antes de otorgar financiamiento, construyendo una cartera de ventas a cuotas más saludable y rentable.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -264,7 +263,7 @@ export default function RiesgoPage() {
                         </h2>
                         <div className="h-1.5 w-20 bg-white rounded-full mx-auto mb-8" />
                         <p className="text-white/90 text-lg sm:text-xl font-light max-w-xl mx-auto leading-relaxed">
-                            Una cartera de crédito más saludable para tu negocio, respaldada por análisis inteligente en cada decisión.
+                            Una cartera de ventas a cuotas más saludable para tu negocio, respaldada por análisis inteligente en cada decisión.
                         </p>
                     </ScrollReveal>
                 </div>

@@ -5,9 +5,9 @@ import { ScrollReveal } from "../../components/ScrollReveal";
 export default function PlataformasPage() {
     const capabilities = [
         "Evaluar automáticamente la capacidad de pago de tus clientes",
-        "Aprobar créditos en minutos con reglas personalizadas",
+        "Aprobar ventas a cuotas en minutos con reglas personalizadas",
         "Definir montos, plazos y condiciones de financiamiento",
-        "Monitorear el comportamiento de pago de tu cartera",
+        "Monitorear el comportamiento de pago de tu cartera de cuotas",
         "Automatizar recordatorios y procesos de cobranza",
         "Tomar decisiones basadas en datos financieros reales",
     ];
@@ -26,7 +26,7 @@ export default function PlataformasPage() {
         {
             num: "02",
             title: "Menos riesgo",
-            desc: "Evalúa a cada cliente antes de otorgar crédito y reduce la morosidad.",
+            desc: "Evalúa a cada cliente antes de otorgar el pago a cuotas y reduce la morosidad.",
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" />
@@ -46,7 +46,7 @@ export default function PlataformasPage() {
         {
             num: "04",
             title: "Control de tu cartera",
-            desc: "Visualiza el estado de todos tus créditos y toma decisiones estratégicas.",
+            desc: "Visualiza el estado de todas tus ventas a cuotas y toma decisiones estratégicas.",
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <rect width="7" height="9" x="3" y="3" rx="1" /><rect width="7" height="5" x="14" y="3" rx="1" /><rect width="7" height="9" x="14" y="12" rx="1" /><rect width="7" height="5" x="3" y="16" rx="1" />
@@ -66,7 +66,7 @@ export default function PlataformasPage() {
                 <div className="max-w-5xl mx-auto relative z-10 pl-6">
                     <ScrollReveal>
                         <span className="inline-block bg-zinc-900 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
-                            Gestión de Crédito Inteligente
+                            Gestión de Ventas a Cuotas Inteligente
                         </span>
                         <h1 className="text-5xl sm:text-7xl font-black tracking-tighter uppercase leading-[0.88] mb-8">
                             Convierte tu<br />negocio en una<br />
@@ -88,12 +88,12 @@ export default function PlataformasPage() {
                         <div>
                             <p className="text-white/80 text-lg font-light leading-relaxed mb-6">
                                 Analizamos el perfil financiero de cada cliente, evaluamos su capacidad de pago y gestionamos todo el{" "}
-                                <span className="text-white font-semibold">ciclo del crédito</span>, desde la solicitud hasta el seguimiento y la cobranza.
+                                <span className="text-white font-semibold">ciclo de venta a cuotas</span>, desde la solicitud hasta el seguimiento y la cobranza.
                             </p>
                             <p className="text-white/80 text-lg font-light leading-relaxed">
                                 Con nuestra tecnología podrás{" "}
                                 <span className="text-[rgb(217,61,47)] font-bold">vender más</span>,{" "}
-                                <span className="text-[rgb(217,61,47)] font-bold">reducir riesgos</span> y tener control total de tu cartera de crédito.
+                                <span className="text-[rgb(217,61,47)] font-bold">reducir riesgos</span> y tener control total de su cartera de ventas a cuotas.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -103,7 +103,7 @@ export default function PlataformasPage() {
                         <div className="bg-white/5 border border-white/10 rounded-3xl p-10 flex items-center justify-center hover:border-[rgb(217,61,47)] transition-colors duration-500 w-full">
                             <img
                                 src="/image/LucasCredito.png"
-                                alt="Plataforma de Créditos"
+                                alt="Plataforma de Ventas a Cuotas"
                                 className="w-full h-auto drop-shadow-2xl"
                             />
                         </div>
@@ -128,7 +128,7 @@ export default function PlataformasPage() {
                                     <span className="text-white">con nuestra plataforma?</span>
                                 </h2>
                                 <p className="text-white/80 font-light text-lg mt-4">
-                                    Todo lo que necesitas para gestionar crédito de principio a fin, en un solo lugar.
+                                    Todo lo que necesitas para gestionar ventas a cuotas de principio a fin, en un solo lugar.
                                 </p>
                             </div>
                         </ScrollReveal>
@@ -155,7 +155,7 @@ export default function PlataformasPage() {
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-3 opacity-30">
                                 <rect width="18" height="18" x="3" y="3" rx="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
                             </svg>
-                            <p className="text-white/30 text-sm font-bold uppercase tracking-widest text-center px-6">Imagen: captura del panel de créditos o dashboard de cartera</p>
+                            <p className="text-white/30 text-sm font-bold uppercase tracking-widest text-center px-6">Imagen: captura del panel de ventas a cuotas o dashboard de cartera</p>
                         </div>
                     </ScrollReveal>
                 </div>
@@ -202,11 +202,11 @@ export default function PlataformasPage() {
                                 Análisis · Automatización · Gestión
                             </span>
                             <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-tight mb-6">
-                                Tecnología para<br />vender a crédito<br />
+                                Tecnología para<br />vender a cuotas<br />
                                 <span className="text-[rgb(217,61,47)]">con seguridad</span>
                             </h2>
                             <p className="text-white/70 text-lg font-light leading-relaxed">
-                                Nuestra solución integra análisis de datos, automatización y herramientas de gestión financiera para que puedas otorgar crédito con mayor confianza.
+                                Nuestra solución integra análisis de datos, automatización y herramientas de gestión financiera para que puedas otorgar ventas a cuotas con mayor confianza.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -217,7 +217,7 @@ export default function PlataformasPage() {
                             <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-6">Resumen de cartera</p>
                             <div className="grid grid-cols-2 gap-4 mb-6">
                                 {[
-                                    { label: "Créditos activos", val: "1,284", delta: "+12%" },
+                                    { label: "Ventas a cuotas activas", val: "1,284", delta: "+12%" },
                                     { label: "Tasa de pago", val: "94.3%", delta: "+2.1%" },
                                     { label: "Aprobados hoy", val: "37", delta: "+8%" },
                                     { label: "En cobranza", val: "5.7%", delta: "-0.3%" },
@@ -250,7 +250,7 @@ export default function PlataformasPage() {
                         </h2>
                         <div className="h-1.5 w-20 bg-zinc-900 rounded-full mx-auto mb-8" />
                         <p className="text-white/90 text-lg sm:text-xl font-light max-w-xl mx-auto leading-relaxed">
-                            Una plataforma diseñada para gestionar crédito de forma inteligente, proteger tu negocio y escalar sin límites.
+                            Una plataforma diseñada para gestionar ventas a cuotas de forma inteligente, proteger tu negocio y escalar sin límites.
                         </p>
                     </ScrollReveal>
                 </div>

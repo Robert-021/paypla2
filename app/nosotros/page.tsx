@@ -49,7 +49,7 @@ const linkedServices = [
     { label: "Bloqueo de Dispositivos", tag: "MDM", href: "/servicios/mdm" },
     { label: "Indicadores de Riesgo", tag: "RIESGO", href: "/servicios/riesgo" },
     { label: "KYC — Validación de Identidad", tag: "KYC", href: "/servicios/kyc" },
-    { label: "Plataforma de Créditos", tag: "CRÉDITOS", href: "/servicios/plataformas" },
+    { label: "Plataforma de Ventas a Cuotas", tag: "A CUOTAS", href: "/servicios/plataformas" },
 ];
 
 export default function NosotrosPage() {
@@ -197,7 +197,7 @@ export default function NosotrosPage() {
                             { val: "2022", label: "Año de fundación" },
                             { val: "ECU", label: "Empresa ecuatoriana" },
                             { val: "4", label: "Soluciones activas" },
-                            { val: "360°", label: "Gestión de crédito" },
+                            { val: "360°", label: "Gestión de ventas a cuotas" },
                         ].map((s, i) => (
                             <ScrollReveal key={i} delay={i * 0.1} direction="left" className="h-full">
                                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col h-full w-full">
@@ -265,7 +265,7 @@ export default function NosotrosPage() {
                         </h2>
                         <div className="h-1.5 w-20 bg-zinc-900 rounded-full mx-auto mb-8" />
                         <p className="text-white/90 text-lg sm:text-xl font-light max-w-xl mx-auto leading-relaxed mb-10">
-                            Conoce cómo PAY&PLAY puede transformar tu negocio con soluciones de crédito, seguridad y gestión financiera.
+                            Conoce cómo PAY&PLAY puede transformar tu negocio con soluciones de ventas a cuotas, seguridad y gestión financiera.
                         </p>
                         <Link
                             href="/servicios"

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ScrollReveal } from "../../components/ScrollReveal";
 
 export default function KYCPage() {
@@ -47,7 +48,7 @@ export default function KYCPage() {
     const benefits = [
         {
             title: "Prevención de fraude",
-            desc: "Asegúrate de que cada cliente es legítimo antes de otorgar crédito o servicios.",
+            desc: "Asegúrate de que cada cliente es legítimo antes de otorgar el pago a cuotas o servicios.",
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" />
@@ -88,14 +89,20 @@ export default function KYCPage() {
 
             {/* ─── HERO ─── */}
             <section className="bg-zinc-900 text-white pt-36 pb-20 px-6 relative overflow-hidden">
-                {/* Background pattern */}
-                <div className="absolute inset-0 opacity-5 pointer-events-none"
-                    style={{
-                        backgroundImage: "repeating-linear-gradient(0deg, #fff 0, #fff 1px, transparent 0, transparent 40px), repeating-linear-gradient(90deg, #fff 0, #fff 1px, transparent 0, transparent 40px)",
-                    }}
+                {/* Background Image */}
+                <Image
+                    src="/image/KYC.jpg"
+                    alt="KYC Digital Background"
+                    fill
+                    className="object-cover opacity-30 pointer-events-none"
+                    priority
                 />
+
+                {/* Gradient Overlay for Readability */}
+                <div className="absolute inset-0 bg-gradient-to-r from-zinc-900 via-zinc-900/60 to-zinc-900/20 z-0 pointer-events-none" />
+
                 {/* Red bottom border */}
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-[rgb(217,61,47)]" />
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-[rgb(217,61,47)] z-10" />
 
                 <div className="max-w-5xl mx-auto relative z-10">
                     <div className="flex flex-col md:flex-row md:items-end gap-12">
@@ -115,16 +122,6 @@ export default function KYCPage() {
                                 </p>
                             </div>
                         </ScrollReveal>
-
-                        {/* ── IMAGE PLACEHOLDER 1 — Ícono/ilustración de identidad digital ── */}
-                        <ScrollReveal direction="left" className="w-full md:w-72 shrink-0">
-                            <div className="w-full border-2 border-dashed border-white/20 rounded-3xl flex flex-col items-center justify-center py-16 bg-white/5">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgb(217,61,47)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-3 opacity-60">
-                                    <rect width="18" height="18" x="3" y="3" rx="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                                </svg>
-                                <p className="text-white/30 text-xs font-bold uppercase tracking-widest text-center px-4">Imagen: verificación de identidad o documento</p>
-                            </div>
-                        </ScrollReveal>
                     </div>
                 </div>
             </section>
@@ -141,7 +138,7 @@ export default function KYCPage() {
                             <p className="text-zinc-600 text-lg leading-relaxed font-light mb-6">
                                 El KYC es el proceso que permite{" "}
                                 <span className="font-bold text-zinc-900">verificar la identidad de tus clientes</span>{" "}
-                                antes de iniciar una relación comercial o aprobar un crédito.
+                                antes de iniciar una relación comercial o aprobar un pago a cuotas.
                             </p>
                             <p className="text-zinc-600 text-lg leading-relaxed font-light">
                                 Su objetivo es garantizar que las personas son quienes dicen ser, reduciendo riesgos de fraude, suplantación de identidad y actividades ilegales.
@@ -203,16 +200,6 @@ export default function KYCPage() {
                             </ScrollReveal>
                         ))}
                     </div>
-
-                    {/* ── IMAGE PLACEHOLDER 3 — Flujo del proceso KYC / app móvil ── */}
-                    <ScrollReveal>
-                        <div className="mt-10 border-2 border-dashed border-white/25 rounded-3xl flex flex-col items-center justify-center py-14">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-3 opacity-30">
-                                <rect width="18" height="18" x="3" y="3" rx="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                            </svg>
-                            <p className="text-white/30 text-sm font-bold uppercase tracking-widest text-center px-6">Imagen: flujo del proceso en app móvil o pantalla de validación</p>
-                        </div>
-                    </ScrollReveal>
                 </div>
             </section>
 
@@ -265,7 +252,7 @@ export default function KYCPage() {
                                 Identifica clientes<br /><span className="text-[rgb(217,61,47)]">con confianza</span>
                             </h2>
                             <p className="text-white/70 text-lg font-light leading-relaxed mb-8">
-                                Con nuestra tecnología de KYC digital, puedes validar la identidad de tus clientes, reducir fraudes y otorgar crédito con mayor seguridad, mientras haces crecer tu negocio de forma confiable.
+                                Con nuestra tecnología de KYC digital, puedes validar la identidad de tus clientes, reducir fraudes y otorgar el pago a cuotas con mayor seguridad, mientras haces crecer tu negocio de forma confiable.
                             </p>
 
                             {/* Checklist */}

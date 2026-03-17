@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   title: "PayPlay",
   description: "Control inteligente de dispositivos",
   icons: {
-    icon: "/image/image_logo.png",
-    shortcut: "/image/image_logo.png",
-    apple: "/image/image_logo.png",
+    icon: "/image/PayPlay.png",
+    shortcut: "/image/PayPlay.png",
+    apple: "/image/PayPlay.png",
   },
 };
 

@@ -70,7 +70,7 @@ export default function MDMPage() {
 
     const benefits = [
         {
-            title: "Protege tus ventas a crédito",
+            title: "Protege tus ventas a cuotas",
             desc: "Reduce el riesgo de pérdidas bloqueando dispositivos en caso de incumplimiento.",
             num: "01"
         },
@@ -104,34 +104,37 @@ export default function MDMPage() {
                 {/* Decorative background shape */}
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-zinc-50 -skew-x-6 origin-top-right pointer-events-none" />
                 <div className="max-w-5xl mx-auto relative z-10">
-                    <ScrollReveal>
-                        <div className="inline-block bg-zinc-900 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
-                            Tecnología de Control Remoto
-                        </div>
-                        <h1 className="text-5xl sm:text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-8">
-                            Sistema de<br />
-                            Bloqueo<br />
-                            <span className="text-[rgb(217,61,47)]">Inteligente</span>
-                        </h1>
-                        <div className="h-1.5 w-20 bg-[rgb(217,61,47)] mb-8 rounded-full" />
-                        <p className="text-zinc-600 text-lg sm:text-xl leading-relaxed font-light max-w-2xl">
-                            Protege los equipos vendidos a crédito y reduce el riesgo de pérdidas por falta de pago. Control total desde una plataforma centralizada para <span className="font-bold text-zinc-900">celulares Android y Smart TVs</span>.
-                        </p>
-                    </ScrollReveal>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        <ScrollReveal direction="right">
+                            <div className="flex flex-col items-start">
+                                <div className="inline-block bg-zinc-900 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
+                                    Tecnología de Control Remoto
+                                </div>
+                                <h1 className="text-5xl sm:text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-8">
+                                    Sistema de<br />
+                                    Bloqueo<br />
+                                    <span className="text-[rgb(217,61,47)]">Inteligente</span>
+                                </h1>
+                                <div className="h-1.5 w-20 bg-[rgb(217,61,47)] mb-8 rounded-full" />
+                                <p className="text-zinc-600 text-lg leading-relaxed font-light max-w-md">
+                                    Protege los equipos vendidos a cuotas y reduce el riesgo de pérdidas por falta de pago. Control total desde una plataforma centralizada para <span className="font-bold text-zinc-900">celulares Android y Smart TVs</span>.
+                                </p>
+                            </div>
+                        </ScrollReveal>
 
-                    {/* ── IMAGE 1 — Hero visual / producto principal ── */}
-                    <ScrollReveal delay={0.2}>
-                        <div className="mt-12 w-full max-w-lg mx-auto md:mx-0 overflow-hidden rounded-3xl shadow-2xl">
-                            <Image
-                                src="/image/image_logo.png"
-                                alt="Sistema MDM PayPlay"
-                                width={800}
-                                height={500}
-                                className="w-full h-auto object-cover"
-                                priority
-                            />
-                        </div>
-                    </ScrollReveal>
+                        {/* ── IMAGE 1 — Hero visual / producto principal ── */}
+                        <ScrollReveal delay={0.2} direction="left">
+                            <div className="relative w-full h-[300px] sm:h-[400px] md:h-[450px]">
+                                <Image
+                                    src="/image/image_logo.png"
+                                    alt="Sistema MDM PayPlay"
+                                    fill
+                                    className="object-contain drop-shadow-2xl"
+                                    priority
+                                />
+                            </div>
+                        </ScrollReveal>
+                    </div>
                 </div>
             </section>
 
@@ -151,7 +154,7 @@ export default function MDMPage() {
                         </div>
                     </ScrollReveal>
                     <div className="flex flex-col gap-4">
-                        {["Tiendas de tecnología", "Distribuidores", "Empresas de venta a crédito"].map((item, i) => (
+                        {["Tiendas de tecnología", "Distribuidores", "Empresas de venta a cuotas"].map((item, i) => (
                             <ScrollReveal key={i} delay={i * 0.1} direction="left">
                                 <div className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl px-6 py-4 hover:border-[rgb(217,61,47)] transition-all duration-300 w-full">
                                     <div className="w-2 h-2 rounded-full bg-[rgb(217,61,47)] shrink-0" />
@@ -305,7 +308,7 @@ export default function MDMPage() {
                         </h2>
                         <div className="h-1.5 w-20 bg-zinc-900 rounded-full mx-auto mb-8" />
                         <p className="text-white/90 text-lg sm:text-xl font-light max-w-xl mx-auto leading-relaxed">
-                            Nuestro sistema te permite vender tecnología a crédito mientras proteges tu inversión.
+                            Nuestro sistema te permite vender tecnología a cuotas mientras proteges tu inversión.
                         </p>
                     </ScrollReveal>
                 </div>

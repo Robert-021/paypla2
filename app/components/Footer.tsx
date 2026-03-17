@@ -1,4 +1,44 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+
 export default function Footer() {
+    const [isCtrlPressed, setIsCtrlPressed] = useState(false);
+    const [showOverlay, setShowOverlay] = useState(false);
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Control") {
+                setIsCtrlPressed(true);
+                setShowOverlay(false);
+            }
+        };
+        const handleKeyUp = (e: KeyboardEvent) => {
+            if (e.key === "Control") setIsCtrlPressed(false);
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        window.addEventListener("keyup", handleKeyUp);
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+            window.removeEventListener("keyup", handleKeyUp);
+        };
+    }, []);
+
+    const handleWheel = (e: React.WheelEvent) => {
+        if (!e.ctrlKey) {
+            setShowOverlay(true);
+            if (timeoutRef.current) clearTimeout(timeoutRef.current);
+            timeoutRef.current = setTimeout(() => {
+                setShowOverlay(false);
+            }, 2000);
+        } else {
+            setShowOverlay(false);
+        }
+    };
+
     return (
         <footer className="bg-black text-white py-12 px-6 border-t border-zinc-800 relative z-20">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
@@ -70,19 +110,32 @@ export default function Footer() {
                 {/* Column 4: Location Map */}
                 <div className="flex flex-col space-y-6">
                     <h3 className="text-xl font-bold uppercase tracking-widest text-[rgb(217,61,47)]">Ubicación</h3>
-                    <div className="w-full h-32 lg:h-40 rounded-2xl overflow-hidden border border-zinc-800 shadow-lg relative transition-all duration-500">
-                        <iframe
-                            title="PAY&PLAY Ubicación"
-                            src="https://maps.google.com/maps?q=Edificio%20Empresarial%20Unicornio%20II,%20Quito&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                            width="100%"
-                            height="100%"
-                            style={{ border: 0 }}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            className="absolute inset-0 grayscale contrast-125 hover:grayscale-0 transition-all duration-500"
-                        ></iframe>
+                <div
+                    className="w-full h-32 lg:h-40 rounded-2xl overflow-hidden border border-zinc-800 shadow-lg relative transition-all duration-500"
+                    onWheel={handleWheel}
+                >
+                    <iframe
+                        title="PAY&PLAY Ubicación"
+                        src="https://maps.google.com/maps?q=Edificio%20Empresarial%20Unicornio%20II,%20Quito&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                        width="100%"
+                        height="100%"
+                        style={{
+                            border: 0,
+                            pointerEvents: isCtrlPressed ? "auto" : "none"
+                        }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className={`absolute inset-0 grayscale contrast-125 transition-all duration-500 ${isCtrlPressed ? "grayscale-0" : "hover:grayscale-0"}`}
+                    ></iframe>
+
+                    {/* Overlay Tip */}
+                    <div className={`absolute inset-0 bg-black/60 flex items-center justify-center p-4 transition-opacity duration-300 pointer-events-none z-10 ${showOverlay ? "opacity-100" : "opacity-0"}`}>
+                        <p className="text-white text-xs font-bold uppercase tracking-widest text-center">
+                            Usa <span className="text-[rgb(217,61,47)]">Ctrl + Scroll</span> para hacer zoom
+                        </p>
                     </div>
+                </div>
                 </div>
 
             </div>

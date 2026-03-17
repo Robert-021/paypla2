@@ -6,7 +6,7 @@ const services = [
   {
     tag: "MDM",
     title: "Bloqueo de Dispositivos",
-    desc: "Protege equipos vendidos a crédito con bloqueo remoto, detección de SIM y seguro contra formateo.",
+    desc: "Protege equipos vendidos a cuotas con bloqueo remoto, detección de SIM y seguro contra formateo.",
     stat: "83%",
     statLabel: "menos morosidad",
     href: "/servicios/mdm",
@@ -19,7 +19,7 @@ const services = [
   {
     tag: "RIESGO",
     title: "Indicadores de Riesgo",
-    desc: "Evalúa la capacidad de pago de cada cliente antes de otorgar crédito, incluso sin historial crediticio.",
+    desc: "Evalúa la capacidad de pago de cada cliente antes de otorgar el pago a cuotas, incluso sin historial crediticio.",
     stat: "360°",
     statLabel: "perfil financiero",
     href: "/servicios/riesgo",
@@ -32,7 +32,7 @@ const services = [
   {
     tag: "KYC",
     title: "Validación de Identidad",
-    desc: "Verifica documentos y detecta fraudes de forma 100% digital antes de aprobar cualquier crédito.",
+    desc: "Verifica documentos y detecta fraudes de forma 100% digital antes de aprobar cualquier pago a cuotas.",
     stat: "100%",
     statLabel: "digital",
     href: "/servicios/kyc",
@@ -43,9 +43,9 @@ const services = [
     )
   },
   {
-    tag: "CRÉDITOS",
-    title: "Plataforma de Créditos",
-    desc: "Gestiona todo el ciclo del crédito: evaluación, aprobación, seguimiento y cobranza automatizada.",
+    tag: "A CUOTAS",
+    title: "Plataforma de Ventas a Cuotas",
+    desc: "Gestiona todo el ciclo de venta a cuotas: evaluación, aprobación, seguimiento y cobranza automatizada.",
     stat: "0",
     statLabel: "desarrollo requerido",
     href: "/servicios/plataformas",
@@ -88,7 +88,7 @@ export default function Home() {
 
             <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[1.1] mb-8 max-w-5xl mx-auto">
               Vende tecnología<br />
-              a crédito,{" "}
+              a cuotas,{" "}
               <span className="text-[rgb(217,61,47)]">sin riesgos</span>
             </h1>
 
@@ -97,7 +97,7 @@ export default function Home() {
             <p className="max-w-2xl mx-auto text-lg sm:text-xl text-zinc-300 mb-12 font-light leading-relaxed">
               PAY&PLAY es la plataforma que permite a tiendas, distribuidores y empresas ofrecer{" "}
               <span className="text-white font-semibold">financiamiento seguro</span>{" "}
-              con control total: bloqueo de dispositivos, análisis de riesgo, validación de identidad y gestión de crédito en un solo lugar.
+              con control total: bloqueo de dispositivos, análisis de riesgo, validación de identidad y gestión de ventas a cuotas en un solo lugar.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -117,7 +117,7 @@ export default function Home() {
 
             {/* Scroll pill indicators */}
             <div className="flex flex-wrap justify-center gap-3 mt-16">
-              {["Bloqueo MDM", "Riesgo crediticio", "KYC digital", "Gestión de crédito"].map((item, i) => (
+              {["Bloqueo MDM", "Riesgo a cuotas", "KYC digital", "Gestión de ventas a cuotas"].map((item, i) => (
                 <span key={i} className="flex items-center gap-2 bg-white/5 border border-white/10 text-zinc-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full backdrop-blur-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-[rgb(217,61,47)]" />
                   {item}
@@ -160,7 +160,7 @@ export default function Home() {
                   </span>
                   <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-tight text-white mb-6">
                     Diseñado para<br />
-                    <span className="text-[rgb(217,61,47)]">negocios que<br />venden a crédito</span>
+                    <span className="text-[rgb(217,61,47)]">negocios que<br />venden a cuotas</span>
                   </h2>
                   <p className="text-zinc-400 text-lg font-light leading-relaxed">
                     Nuestra tecnología está pensada para tiendas de tecnología, distribuidores y empresas que quieren ofrecer financiamiento sin asumir el riesgo. Toda la infraestructura que necesitas, lista para usar.
@@ -170,8 +170,8 @@ export default function Home() {
               <div className="flex flex-col gap-4">
                 {[
                   { label: "Tiendas de tecnología", desc: "Vende más celulares y Smart TVs with financiamiento propio." },
-                  { label: "Distribuidores", desc: "Amplía tu red de clientes con crédito seguro y controlado." },
-                  { label: "Empresas de venta a crédito", desc: "Automatiza tu cartera y reduce la morosidad con tecnología." },
+                  { label: "Distribuidores", desc: "Amplía tu red de clientes con ventas a cuotas seguras y controladas." },
+                  { label: "Empresas de venta a cuotas", desc: "Automatiza tu cartera y reduce la morosidad con tecnología." },
                 ].map((item, i) => (
                   <ScrollReveal key={i} delay={i * 0.1} direction="left">
                     <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl px-6 py-5 hover:border-[rgb(217,61,47)]/50 transition-all duration-300 w-full">
@@ -271,7 +271,7 @@ export default function Home() {
                   </span>
                   <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-tight text-white mb-6">
                     Nacimos para<br />
-                    <span className="text-[rgb(217,61,47)]">democratizar<br />el crédito</span>
+                    <span className="text-[rgb(217,61,47)]">democratizar<br />el pago a cuotas</span>
                   </h2>
                   <p className="text-zinc-400 text-lg font-light leading-relaxed mb-8">
                     Después de la pandemia, entendimos que estar conectado ya no es un lujo. Por eso creamos modelos de financiamiento flexibles para personas sin historial crediticio o acceso a la banca tradicional.
