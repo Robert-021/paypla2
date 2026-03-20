@@ -1,74 +1,76 @@
 
 $outDir = "c:\xampp\htdocs\payivanplay\out"
 
-$files = @(
-    @{ Path = "$outDir\index.html"; Depth = 0 },
-    @{ Path = "$outDir\nosotros.html"; Depth = 0 },
-    @{ Path = "$outDir\servicios.html"; Depth = 0 },
-    @{ Path = "$outDir\404.html"; Depth = 0 },
-    @{ Path = "$outDir\_not-found.html"; Depth = 0 },
-    @{ Path = "$outDir\servicios\kyc.html"; Depth = 1 },
-    @{ Path = "$outDir\servicios\mdm.html"; Depth = 1 },
-    @{ Path = "$outDir\servicios\plataformas.html"; Depth = 1 },
-    @{ Path = "$outDir\servicios\riesgo.html"; Depth = 1 }
-)
+# Obtener todos los archivos HTML recursivamente
+$htmlFiles = Get-ChildItem -Path $outDir -Filter *.html -Recurse
 
-Write-Host "=== Corrigiendo rutas en archivos HTML ===" -ForegroundColor Cyan
+Write-Host "=== Corrigiendo rutas en archivos HTML (V4.1 - Robusto) ===" -ForegroundColor Cyan
 
-foreach ($file in $files) {
-    $filePath = $file.Path
-    $depth = $file.Depth
-
-    if (-not (Test-Path $filePath)) {
-        Write-Host "OMITIDO: $filePath" -ForegroundColor Yellow
-        continue
-    }
-
-    if ($depth -eq 0) {
+foreach ($file in $htmlFiles) {
+    # Calcular profundidad relativa
+    $fullPath = $file.FullName
+    $relPath = $fullPath.Substring($outDir.Length).TrimStart("\")
+    $slashes = ($relPath.ToCharArray() | Where-Object { $_ -eq "\" }).Count
+    
+    $rel = ""
+    if ($slashes -eq 0) {
         $rel = "./"
-        $homeRel = "./"
     } else {
-        $rel = "../"
-        $homeRel = "../"
+        for ($i = 0; $i -lt $slashes; $i++) { $rel += "../" }
     }
 
-    $content = [System.IO.File]::ReadAllText($filePath, [System.Text.Encoding]::UTF8)
+    $content = [System.IO.File]::ReadAllText($fullPath, [System.Text.Encoding]::UTF8)
 
-    # Reemplazar con slash final primero (assets: _next, image, etc)
-    $content = $content.Replace("/payplay2/payplay/", $rel)
+    # 1. Reemplazar rutas de activos (_next, image)
+    $content = $content.Replace('href="/_next/', ('href="' + $rel + '_next/'))
+    $content = $content.Replace('src="/_next/', ('src="' + $rel + '_next/'))
+    $content = $content.Replace('src="/image/', ('src="' + $rel + 'image/'))
+    $content = $content.Replace('href="/image/', ('href="' + $rel + 'image/'))
+    
+    # 2. Reemplazar links internos (Remover trailing slashes para URLs limpias)
+    $content = $content.Replace('href="/"', ('href="' + $rel + '"'))
+    
+    # Lista de páginas para limpiar slashes
+    $pages = @("nosotros", "servicios", "contacto", "productos", "ofertas")
+    foreach ($p in $pages) {
+        $content = $content.Replace(('href="/' + $p + '/"'), ('href="' + $rel + $p + '"'))
+        $content = $content.Replace(('href="/' + $p + '"'), ('href="' + $rel + $p + '"'))
+    }
 
-    # Reemplazar el link al home (sin slash final) en href="..."
-    $content = $content.Replace('href="/payplay2/payplay"', ('href="' + $homeRel + '"'))
-
-    # Reemplazar en JSON embebido (con escape de slash)
-    $content = $content.Replace("\/payplay2\/payplay\/", $rel)
-    $content = $content.Replace("\/payplay2\/payplay`"", ($homeRel + '"'))
-
-    [System.IO.File]::WriteAllText($filePath, $content, [System.Text.Encoding]::UTF8)
-
-    Write-Host "OK: $($filePath.Replace($outDir, '')) [rel='$rel']" -ForegroundColor Green
+    [System.IO.File]::WriteAllText($fullPath, $content, [System.Text.Encoding]::UTF8)
+    Write-Host "OK: $relPath [Depth: $slashes, Rel: $rel]" -ForegroundColor Green
 }
 
 Write-Host ""
-Write-Host "=== Verificacion ===" -ForegroundColor Yellow
+Write-Host "=== Generando .htaccess ROBUSTO (Anti-403) ===" -ForegroundColor Yellow
+$htaccessContent = @"
+RewriteEngine On
+RewriteBase /
 
-foreach ($file in $files) {
-    if (Test-Path $file.Path) {
-        $c = [System.IO.File]::ReadAllText($file.Path, [System.Text.Encoding]::UTF8)
-        $count = ($c.Split("/payplay2").Length - 1)
-        $color = if ($count -eq 0) { "Green" } else { "Red" }
-        Write-Host "$($file.Path.Replace($outDir,'')) - rutas antiguas restantes: $count" -ForegroundColor $color
-    }
-}
+# 1. Si se accede a una carpeta (ej /nosotros/) que NO tiene index.html
+# pero existe un archivo .html con ese nombre, redirigir a la URL limpia
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)/$ $1 [L,R=301]
 
-Write-Host ""
-Write-Host "=== Creando ZIP para Hostinger ===" -ForegroundColor Cyan
+# 2. Redirigir de /pagina.html a /pagina (URL limpia)
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [L,R=301]
 
-$zipPath = "c:\xampp\htdocs\payivanplay\HOSTINGER_LISTO.zip"
+# 3. Si el archivo .html existe, servirlo internamente
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# 4. Manejo de errores 404
+ErrorDocument 404 /404.html
+"@
+[System.IO.File]::WriteAllText("$outDir\.htaccess", $htaccessContent, [System.Text.Encoding]::UTF8)
+
+Write-Host "=== Creando ZIP Final 4: PAYPLAY_HOSTINGER_V4.zip ===" -ForegroundColor Cyan
+$zipPath = "c:\xampp\htdocs\payivanplay\PAYPLAY_HOSTINGER_V4.zip"
 if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
-
 Compress-Archive -Path "$outDir\*" -DestinationPath $zipPath -Force
 
-$sizeMB = [math]::Round((Get-Item $zipPath).Length / 1MB, 2)
-Write-Host "ZIP creado: $zipPath ($sizeMB MB)" -ForegroundColor Green
-Write-Host "Listo! Sube HOSTINGER_LISTO.zip y descomprime en public_html/" -ForegroundColor Cyan
+Write-Host "¡TERMINADO! El ZIP V4 Robusto está listo." -ForegroundColor Green
