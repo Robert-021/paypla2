@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # PayPlay
 
 PayPlay es una plataforma moderna diseñada para ofrecer soluciones avanzadas en servicios de gestión y cumplimiento. Este proyecto está construido con un stack tecnológico de vanguardia para garantizar el mejor rendimiento y experiencia de usuario.

@@ -167,7 +167,7 @@ export default function Home() {
               </ScrollReveal>
               <div className="flex flex-col gap-4">
                 {[
-                  { label: "Tiendas de tecnología", desc: "Vende más celulares y Smart TVs with financiamiento propio." },
+                  { label: "Tiendas de tecnología", desc: "Vende más celulares y Smart TVs con financiamiento propio." },
                   { label: "Distribuidores", desc: "Amplía tu red de clientes con ventas a cuotas seguras y controladas." },
                   { label: "Empresas de venta a cuotas", desc: "Automatiza tu cartera y reduce la morosidad con tecnología." },
                 ].map((item, i) => (
@@ -216,22 +216,20 @@ export default function Home() {
                   <Link key={i} href={s.href}
                     className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-[rgb(217,61,47)]/60 backdrop-blur-md transition-all duration-400 hover:-translate-y-1 hover:shadow-xl hover:shadow-[rgb(217,61,47)]/10 flex flex-col h-full"
                   >
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="w-12 h-12 bg-[rgb(217,61,47)]/15 rounded-xl flex items-center justify-center text-[rgb(217,61,47)] transition-all group-hover:bg-[rgb(217,61,47)] group-hover:text-white duration-300">
-                        {s.icon}
+                    <div className="flex items-start justify-between gap-4 mb-6">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-[rgb(217,61,47)]/15 rounded-xl flex items-center justify-center text-[rgb(217,61,47)] transition-all group-hover:bg-[rgb(217,61,47)] group-hover:text-white duration-300 shrink-0">{s.icon}</div>
+                        <div>
+                          <span className="inline-block border border-[rgb(217,61,47)]/40 text-[rgb(217,61,47)] text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-1">{s.tag}</span>
+                          <h3 className="text-sm sm:text-base font-black uppercase tracking-tight text-white group-hover:text-[rgb(217,61,47)] transition-colors leading-tight">{s.title}</h3>
+                        </div>
                       </div>
-                      <div className="text-right">
-                        <p className="text-2xl font-black text-[rgb(217,61,47)]">{s.stat}</p>
-                        <p className="text-zinc-500 text-xs font-light uppercase tracking-widest">{s.statLabel}</p>
+                      <div className="text-right shrink-0">
+                        <p className="text-4xl sm:text-5xl font-black text-[rgb(217,61,47)] leading-none">{s.stat}</p>
+                        <p className="text-zinc-500 text-[10px] font-light uppercase tracking-widest">{s.statLabel}</p>
                       </div>
                     </div>
-                    <span className="inline-block border border-[rgb(217,61,47)]/40 text-[rgb(217,61,47)] text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 w-fit">
-                      {s.tag}
-                    </span>
-                    <h3 className="text-lg font-black uppercase tracking-tight mb-3 text-white group-hover:text-[rgb(217,61,47)] transition-colors">
-                      {s.title}
-                    </h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed mb-5 font-light">{s.desc}</p>
+                    <p className="text-zinc-100 text-sm leading-relaxed mb-5 font-light">{s.desc}</p>
                     <span className="text-[rgb(217,61,47)] text-xs font-bold uppercase tracking-widest flex items-center gap-2 mt-auto">
                       Ver más
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform duration-200">
@@ -269,7 +267,7 @@ export default function Home() {
                   </span>
                   <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-tight text-white mb-6">
                     Nacimos para<br />
-                    <span className="text-[rgb(217,61,47)]">democratizar<br />el pago a cuotas</span>
+                    <span className="text-[rgb(217,61,47)]">facilitar las ventas<br />a cuotas</span>
                   </h2>
                   <p className="text-zinc-400 text-lg font-light leading-relaxed mb-8">
                     Después de la pandemia, entendimos que estar conectado ya no es un lujo. Por eso creamos modelos de financiamiento flexibles para personas sin historial crediticio o acceso a la banca tradicional.
