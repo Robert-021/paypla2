@@ -192,9 +192,9 @@ export default function PlataformasPage() {
                                             <div className="w-10 h-10 rounded-xl bg-[rgb(217,61,47)]/10 text-[rgb(217,61,47)] flex items-center justify-center group-hover:bg-[rgb(217,61,47)] group-hover:text-white transition-all duration-300">
                                                 {b.icon}
                                             </div>
-                                            <h3 className="font-black uppercase tracking-tight text-zinc-900 text-sm">{b.title}</h3>
+                                            <h3 className="font-black uppercase tracking-tight text-zinc-900 text-xl">{b.title}</h3>
                                         </div>
-                                        <p className="text-zinc-500 text-sm font-light leading-relaxed">{b.desc}</p>
+                                        <p className="text-zinc-500 text-base font-light leading-relaxed">{b.desc}</p>
                                     </div>
                                 </div>
                             </ScrollReveal>

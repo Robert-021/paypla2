@@ -190,8 +190,8 @@ export default function MDMPage() {
                                         {f.icon}
                                     </div>
                                     <div>
-                                        <h3 className="text-sm font-black uppercase tracking-tight text-zinc-900 mb-1">{f.title}</h3>
-                                        <p className="text-zinc-500 text-sm leading-relaxed font-light">{f.desc}</p>
+                                        <h3 className="text-xl font-black uppercase tracking-tight text-zinc-900 mb-1">{f.title}</h3>
+                                        <p className="text-zinc-500 text-base leading-relaxed font-light">{f.desc}</p>
                                     </div>
                                 </div>
                             </ScrollReveal>
@@ -289,7 +289,7 @@ export default function MDMPage() {
                                     <div className="h-8 w-px bg-white/10 group-hover:bg-[rgb(217,61,47)] transition-colors duration-300 shrink-0" />
                                     <div>
                                         <h3 className="font-black uppercase tracking-tight text-white text-base mb-1">{b.title}</h3>
-                                        <p className="text-white/50 text-sm font-light leading-relaxed">{b.desc}</p>
+                                        <p className="text-white/80 text-base font-light leading-relaxed">{b.desc}</p>
                                     </div>
                                 </div>
                             </ScrollReveal>

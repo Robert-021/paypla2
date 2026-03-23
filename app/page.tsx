@@ -160,7 +160,7 @@ export default function Home() {
                     Diseñado para<br />
                     <span className="text-[rgb(217,61,47)]">negocios que<br />venden a cuotas</span>
                   </h2>
-                  <p className="text-zinc-400 text-lg font-light leading-relaxed">
+                  <p className="text-zinc-100 text-lg font-light leading-relaxed">
                     Nuestra tecnología está pensada para tiendas de tecnología, distribuidores y empresas que quieren ofrecer financiamiento sin asumir el riesgo. Toda la infraestructura que necesitas, lista para usar.
                   </p>
                 </div>
@@ -180,7 +180,7 @@ export default function Home() {
                       </div>
                       <div>
                         <p className="font-black uppercase tracking-tight text-white text-sm mb-0.5">{item.label}</p>
-                        <p className="text-zinc-500 text-sm font-light">{item.desc}</p>
+                        <p className="text-zinc-450 text-sm font-light">{item.desc}</p>
                       </div>
                     </div>
                   </ScrollReveal>
@@ -269,7 +269,7 @@ export default function Home() {
                     Nacimos para<br />
                     <span className="text-[rgb(217,61,47)]">facilitar las ventas<br />a cuotas</span>
                   </h2>
-                  <p className="text-zinc-400 text-lg font-light leading-relaxed mb-8">
+                  <p className="text-zinc-300 text-lg font-light leading-relaxed mb-8">
                     Después de la pandemia, entendimos que estar conectado ya no es un lujo. Por eso creamos modelos de financiamiento flexibles para personas sin historial crediticio o acceso a la banca tradicional.
                   </p>
                   <Link href="/nosotros"

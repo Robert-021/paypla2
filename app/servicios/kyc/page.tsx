@@ -192,9 +192,9 @@ export default function KYCPage() {
                                                 <div className="w-9 h-9 rounded-lg bg-zinc-900 text-white flex items-center justify-center shrink-0">
                                                     {s.icon}
                                                 </div>
-                                                <h3 className="font-black uppercase tracking-tight text-sm">{s.title}</h3>
+                                                <h3 className="font-black uppercase tracking-tight text-xl">{s.title}</h3>
                                             </div>
-                                            <p className="text-white/70 text-sm font-light leading-relaxed">{s.desc}</p>
+                                            <p className="text-white/90 text-base font-light leading-relaxed">{s.desc}</p>
                                         </div>
                                     </div>
                                 </div>
