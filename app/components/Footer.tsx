@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="bg-black text-white py-12 px-6 border-t border-zinc-800 relative z-20">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <>
+            <footer className="bg-black text-white py-12 px-6 border-t border-zinc-800 relative z-20">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
 
                 {/* Column 1: Information */}
                 <div className="flex flex-col space-y-6">
@@ -95,7 +96,13 @@ export default function Footer() {
 
             <div className="max-w-5xl mx-auto mt-6 pt-4 border-t border-zinc-800 text-center text-zinc-500 text-sm">
                 <p>© {new Date().getFullYear()} PAY&PLAY. Todos los derechos reservados.</p>
+                <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
+                    <Link href="/terminos-condiciones" className="text-zinc-500 transition hover:text-white">
+                        Términos y Condiciones
+                    </Link>
+                </div>
             </div>
         </footer>
+        </>
     );
 }
