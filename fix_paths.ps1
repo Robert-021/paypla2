@@ -1,5 +1,10 @@
 
-$outDir = "c:\xampp\htdocs\payivanplay\out"
+$projectDir = $PSScriptRoot
+$outDir = Join-Path $projectDir "out"
+
+if (-not (Test-Path -LiteralPath $outDir -PathType Container)) {
+    throw "No existe la carpeta de exportación: $outDir"
+}
 
 # Obtener todos los archivos HTML recursivamente
 $htmlFiles = Get-ChildItem -Path $outDir -Filter *.html -Recurse
@@ -70,7 +75,7 @@ ErrorDocument 404 /404.html
 [System.IO.File]::WriteAllText("$outDir\.htaccess", $htaccessContent, [System.Text.Encoding]::UTF8)
 
 Write-Host "=== Creando ZIP Final 4: PAYPLAY_HOSTINGER_V4.zip ===" -ForegroundColor Cyan
-$zipPath = "c:\xampp\htdocs\payivanplay\PAYPLAY_HOSTINGER_V4.zip"
+$zipPath = Join-Path $projectDir "PAYPLAY_HOSTINGER_V4.zip"
 if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
 Compress-Archive -Path "$outDir\*" -DestinationPath $zipPath -Force
 
