@@ -14,6 +14,48 @@ interface LegalViewerProps {
   children?: ReactNode;
 }
 
+interface LegalTextProps {
+  text: string;
+  as?: "paragraph" | "heading";
+  children?: ReactNode;
+  className?: string;
+}
+
+export function LegalText({
+  text,
+  as = "paragraph",
+  children,
+  className = "",
+}: LegalTextProps) {
+  const match = text.match(/^(\d+\.|[a-z]\))\s+([\s\S]+)$/i);
+  const literal = match?.[1];
+  const content = match?.[2] ?? text;
+  const textElement = as === "heading" ? (
+    <h4 className="font-bold text-white">{content}</h4>
+  ) : (
+    <p>{content}</p>
+  );
+
+  if (!literal) {
+    return (
+      <div className={className}>
+        {textElement}
+        {children}
+      </div>
+    );
+  }
+
+  return (
+    <div className={`ml-4 grid grid-cols-[2rem_minmax(0,1fr)] gap-x-2 border-l border-white/10 pl-3 sm:ml-6 sm:grid-cols-[2.5rem_minmax(0,1fr)] sm:pl-4 ${className}`}>
+      <span className="font-bold text-[rgb(217,61,47)]">{literal}</span>
+      <div className="min-w-0 space-y-2">
+        {textElement}
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export function LegalViewer({
   title,
   description = "Consulta el contenido completo del documento legal con el mismo estilo de la marca.",

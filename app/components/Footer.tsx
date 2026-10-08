@@ -100,6 +100,14 @@ export default function Footer() {
                     <Link href="/terminos-condiciones" className="text-zinc-500 transition hover:text-white">
                         Términos y Condiciones
                     </Link>
+                    <span>|</span>
+                    <Link href="/politica-proteccion-datos-personales" className="text-zinc-500 transition hover:text-white">
+                        Política de Protección de Datos Personales
+                    </Link>
+                    <span>|</span>
+                    <Link href="/politica-tratamiento-datos-personales" className="text-zinc-500 transition hover:text-white">
+                        Política de Tratamiento de Datos Personales
+                    </Link>
                 </div>
             </div>
         </footer>

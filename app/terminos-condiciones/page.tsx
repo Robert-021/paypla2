@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LegalViewer } from "../components/LegalViewer";
+import { LegalText, LegalViewer } from "../components/LegalViewer";
 import { termsSections } from "../data/legal-content";
 
 export default function TerminosCondicionesPage() {
@@ -29,16 +29,21 @@ export default function TerminosCondicionesPage() {
               </h3>
 
               <div className="space-y-4 text-sm leading-7 text-zinc-200 sm:text-base">
+                {section.itemsWithParagraphs?.map((item) => (
+                  <LegalText key={item.title} text={item.title} as="heading" className="space-y-2">
+                    <p>{item.paragraph}</p>
+                  </LegalText>
+                ))}
+
                 {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <LegalText key={paragraph} text={paragraph} />
                 ))}
 
                 {section.subitems && section.subitems.length > 0 && (
-                  <ul className="space-y-2 pl-5 text-zinc-200">
+                  <ul className="space-y-3 text-zinc-200">
                     {section.subitems.map((item) => (
-                      <li key={item} className="flex gap-3 leading-7">
-                        <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-[rgb(217,61,47)]" />
-                        <span>{item}</span>
+                      <li key={item}>
+                        <LegalText text={item} />
                       </li>
                     ))}
                   </ul>
